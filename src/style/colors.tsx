@@ -13,6 +13,7 @@ const colors = {
   Blue: color(20, 70, 130), // #144682
   Yellow: color(229, 196, 111), // #e5c46f
   Gold: color(217, 181, 4), // #d9b504
+  Bronze: color(138, 124, 52), // #8a7c34
 };
 
 export default colors;
