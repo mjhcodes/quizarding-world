@@ -1,26 +1,24 @@
-import { HOGWARTS } from "./dataKeys";
+import * as DK from "./dataKeys";
 
 interface InitialState {
   background: string;
+  isMobile: boolean;
   isLoading: boolean;
 }
 
 const initialState: InitialState = {
-  background: HOGWARTS,
+  background: DK.HOGWARTS,
+  isMobile: true,
   isLoading: false,
 };
 
 export default function uiReducer(
   state = initialState,
-  action: { type: string; name: string; value: string }
+  action: { type: string; name: string; value: string | boolean }
 ) {
   switch (action.type) {
-    case "SET_BACKGROUND":
-      return {
-        ...state,
-        [action.name]: action.value,
-      };
-    case "TOGGLE_LOADING":
+    case DK.SET_VALUE:
+    case DK.TOGGLE_VALUE:
       return {
         ...state,
         [action.name]: action.value,

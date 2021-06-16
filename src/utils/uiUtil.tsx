@@ -1,15 +1,17 @@
-export function setBackground(dispatch: any, value: string) {
+import * as DK from "../redux/dataKeys";
+
+export function setValue(dispatch: any, name: string, value: string) {
   dispatch({
-    type: "SET_BACKGROUND",
-    name: "background",
+    type: DK.SET_VALUE,
+    name,
     value,
   });
 }
 
-export function toggleLoading(dispatch: any, value: boolean) {
+export function toggleValue(dispatch: any, name: string, value: boolean) {
   dispatch({
-    type: "TOGGLE_LOADING",
-    name: "isLoading",
+    type: DK.TOGGLE_VALUE,
+    name,
     value,
   });
 }
