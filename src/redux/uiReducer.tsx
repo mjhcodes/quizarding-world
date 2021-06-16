@@ -2,14 +2,24 @@ import * as DK from "./dataKeys";
 
 interface InitialState {
   background: string;
-  isMobile: boolean;
   isLoading: boolean;
+  isMobile: boolean;
+  overlayVisibility: OverLayVisibility;
+}
+
+interface OverLayVisibility {
+  characterSelection: boolean;
+  gameSelection: boolean;
 }
 
 const initialState: InitialState = {
   background: DK.HOGWARTS,
-  isMobile: true,
   isLoading: false,
+  isMobile: true,
+  overlayVisibility: {
+    characterSelection: false,
+    gameSelection: true,
+  },
 };
 
 export default function uiReducer(
@@ -22,6 +32,14 @@ export default function uiReducer(
       return {
         ...state,
         [action.name]: action.value,
+      };
+    case DK.TOGGLE_OVERLAY:
+      return {
+        ...state,
+        overlayVisibility: {
+          ...state.overlayVisibility,
+          [action.name]: action.value,
+        },
       };
     default:
       return state;

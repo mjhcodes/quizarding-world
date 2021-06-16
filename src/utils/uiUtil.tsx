@@ -15,3 +15,11 @@ export function toggleValue(dispatch: any, name: string, value: boolean) {
     value,
   });
 }
+
+export function toggleOverlay(dispatch: any, name: string, value: boolean) {
+  dispatch({
+    type: DK.TOGGLE_OVERLAY,
+    name,
+    value,
+  });
+}
