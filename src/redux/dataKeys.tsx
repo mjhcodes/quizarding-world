@@ -1,5 +1,9 @@
-// state - ui
+// ui state
 export const BACKGROUND = "background";
+
+// ui reducers
+export const SET_VALUE = "SET_VALUE";
+export const TOGGLE_VALUE = "TOGGLE_VALUE";
 
 // houses
 export const GRYFFINDOR = "gryffindor";
