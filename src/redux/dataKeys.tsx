@@ -4,6 +4,7 @@ export const BACKGROUND = "background";
 // ui reducers
 export const SET_VALUE = "SET_VALUE";
 export const TOGGLE_VALUE = "TOGGLE_VALUE";
+export const TOGGLE_OVERLAY = "TOGGLE_OVERLAY";
 
 // houses
 export const GRYFFINDOR = "gryffindor";
