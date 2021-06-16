@@ -1,42 +1,43 @@
 import React from "react";
 import { connect } from "react-redux";
-import * as DK from "./redux/dataKeys";
-import { setBackground, toggleLoading } from "./utils/uiUtil";
-import { LoadingIcon, LoadingIconWithWords } from "./components/LoadingIcons";
+import styled from "styled-components";
 import "./App.css";
+import { LoadingIconWithWords } from "./components/LoadingIcons";
+import QWStyle from "./style/QWStyle";
+import { toggleValue } from "./utils/uiUtil";
+
+interface Props {
+  customWidth: string;
+}
+
+const LoadingWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ${(props: Props) => props.customWidth};
+`;
 
 function App({
   dispatch,
   background,
-  isLoading,
+  isMobile,
 }: {
   dispatch: any;
   background: string;
-  isLoading: boolean;
+  isMobile: boolean;
 }) {
-  const backgroundImage = `url(/images/backgrounds/${background}.png)`;
+  window.onresize = () => {
+    window.innerWidth < QWStyle.ui.mobileBreakpoint
+      ? toggleValue(dispatch, "isMobile", true)
+      : toggleValue(dispatch, "isMobile", false);
+  };
 
+  const backgroundImage = `url(/images/backgrounds/${background}.png)`;
   return (
     <main style={{ backgroundImage }}>
-      <button onClick={() => setBackground(dispatch, DK.HOGWARTS)}>
-        Hogwarts
-      </button>
-      <button onClick={() => setBackground(dispatch, DK.GRYFFINDOR)}>
-        Gryffindor
-      </button>
-      <button onClick={() => setBackground(dispatch, DK.HUFFLEPUFF)}>
-        Hufflepuff
-      </button>
-      <button onClick={() => setBackground(dispatch, DK.RAVENCLAW)}>
-        Ravenclaw
-      </button>
-      <button onClick={() => setBackground(dispatch, DK.SLYTHERIN)}>
-        Slytherin
-      </button>
-      <br />
-      {isLoading ? <LoadingIcon /> : <LoadingIconWithWords />}
-      <button onClick={() => toggleLoading(dispatch, true)}>TRUE</button>
-      <button onClick={() => toggleLoading(dispatch, false)}>FALSE</button>
+      <LoadingWrapper customWidth={isMobile ? "100%" : "50%"}>
+        <LoadingIconWithWords />
+      </LoadingWrapper>
     </main>
   );
 }
@@ -45,6 +46,7 @@ export default connect(
   (state: any) => ({
     background: state.ui.background,
     isLoading: state.ui.isLoading,
+    isMobile: state.ui.isMobile,
   }),
   (dispatch) => ({ dispatch })
 )(App);
