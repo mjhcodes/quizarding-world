@@ -1,5 +1,16 @@
 /*** GLOBAL STYLES ***/
 
+:root {
+  --clr-white: #f3f3f3;
+  --clr-grey: #dddddd;
+  --clr-black: #000000;
+  --clr-red: #73020c;
+  --clr-green: #146849;
+  --clr-blue: #144682;
+  --clr-yellow: #e5c46f;
+  --clr-gold: #d9b504;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
