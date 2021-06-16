@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import styled from "styled-components";
 import QWStyle from "../style/QWStyle";
 
@@ -17,8 +16,9 @@ const SpinningBolt = styled.img`
 `;
 
 const WordsWithDots = styled.p`
+  margin: 2rem;
   color: ${QWStyle.colors.Yellow()};
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   letter-spacing: 0.25rem;
 
   ::after {
@@ -50,6 +50,12 @@ const WordsWithDots = styled.p`
   }
 `;
 
+const LoadingIconWithWordsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export function LoadingIcon() {
   return (
     <SpinningBolt
@@ -65,12 +71,12 @@ export function LoadingWords() {
 
 export function LoadingIconWithWords() {
   return (
-    <Fragment>
+    <LoadingIconWithWordsWrapper>
       <SpinningBolt
         src={`/images/icons/zap.png`}
         alt="Spinning yellow lightning bolt"
       />
       <LoadingWords />
-    </Fragment>
+    </LoadingIconWithWordsWrapper>
   );
 }
