@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import _ from "lodash";
 import QWStyle from "../style/QWStyle";
+import { resetData } from "../utils/dataUtil";
 import { toggleOverlay } from "../utils/uiUtil";
 
 function returnToGameSelection(dispatch: any) {
@@ -29,24 +31,37 @@ const WindowCaption = styled.h3`
   font-family: Lora;
   font-size: 32px;
   font-style: bold;
+  text-transform: capitalize;
 `;
+
+interface CharacterObject {
+  full_name?: string;
+  first_name?: string;
+}
 
 function CharacterWindow({
   dispatch,
   isMobile,
+  characters,
 }: {
   dispatch: any;
   isMobile: boolean;
+  characters: object[];
 }) {
+  const character: CharacterObject = characters[0];
+  const first_name = _.get(character, "first_name", "");
+  const full_name = _.get(character, "full_name", "");
+
   return (
     <WindowWrapper>
       <Window
         isMobile={isMobile}
-        src={"/images/characters/harry/avatar.png"}
+        src={`/images/characters/${first_name}/avatar.png`}
         alt=""
       />
-      <WindowCaption>Harry Potter</WindowCaption>
+      <WindowCaption>{full_name}</WindowCaption>
       <button onClick={() => returnToGameSelection(dispatch)}>BACK</button>
+      <button onClick={() => resetData(dispatch)}>RESET</button>
     </WindowWrapper>
   );
 }
@@ -54,6 +69,7 @@ function CharacterWindow({
 export default connect(
   (state: any) => ({
     isMobile: state.ui.isMobile,
+    characters: state.data.characters,
   }),
   (dispatch) => ({ dispatch })
 )(CharacterWindow);
