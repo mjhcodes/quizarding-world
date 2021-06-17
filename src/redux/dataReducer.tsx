@@ -18,7 +18,7 @@ export default function dataReducer(
 ) {
   switch (action.type) {
     case DK.RESET_DATA:
-      return initialState;
+      return { ...initialState };
     case DK.SET_FULL_DATA:
       return { ...action.value };
     case DK.SET_CATEGORY_DATA:
