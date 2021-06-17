@@ -5,9 +5,21 @@ import MenuButton from "../components/MenuButton";
 export default function GameSelection() {
   return (
     <MenuContainer>
-      <MenuButton text="FREE PLAY" disabled={false} />
-      <MenuButton text="LOGIN" disabled={true} />
-      <MenuButton text="SIGN UP" disabled={true} />
+      <MenuButton
+        disabled={false}
+        text="FREE PLAY"
+        caption="Random Characters - Progress Not Saved"
+      />
+      <MenuButton
+        disabled={true}
+        text="LOGIN"
+        caption="Select Characters - Collect Items - Compete for House Cup"
+      />
+      <MenuButton
+        disabled={true}
+        text="SIGN UP"
+        caption="Create New Account for Free"
+      />
     </MenuContainer>
   );
 }

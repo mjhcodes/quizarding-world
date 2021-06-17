@@ -3,23 +3,24 @@ import styled from "styled-components";
 import QWStyle from "../style/QWStyle";
 
 interface Props {
-  customWidth: string;
+  isMobile: boolean;
 }
 
 const MenuContainerSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${(props: Props) => props.customWidth};
+  width: ${(props: Props) => (props.isMobile ? "100%" : "50%")};
 `;
 
 const MenuContainerWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 5rem;
-  width: ${(props: Props) => props.customWidth};
+  padding: ${(props: Props) => (props.isMobile ? "1rem 3rem" : "2rem 4rem")};
+  height: ${(props: Props) => (props.isMobile ? "90vh" : "80vh")};
+  width: ${(props: Props) => (props.isMobile ? "90%" : "80%")};
   max-width: 600px;
   border-radius: 50px;
   background: linear-gradient(
@@ -39,8 +40,8 @@ function MenuContainer({
   isMobile: boolean;
 }) {
   return (
-    <MenuContainerSection customWidth={isMobile ? "100%" : "50%"}>
-      <MenuContainerWrapper customWidth={isMobile ? "90%" : "80%"}>
+    <MenuContainerSection isMobile={isMobile}>
+      <MenuContainerWrapper isMobile={isMobile}>
         {children}
       </MenuContainerWrapper>
     </MenuContainerSection>
