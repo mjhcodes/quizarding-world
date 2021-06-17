@@ -5,7 +5,7 @@ import QWStyle from "../style/QWStyle";
 
 interface Props {
   disabled: boolean;
-  isMobile: boolean;
+  isMobile?: boolean;
 }
 
 const ButtonWrapper = styled.div`
@@ -45,6 +45,10 @@ const ButtonCaption = styled.p`
   text-align: center;
   font-family: Montserrat;
   letter-spacing: 0.02em;
+  color: ${(props: Props) =>
+    props.disabled
+      ? `${QWStyle.colors.Black(0.6)}`
+      : `${QWStyle.colors.Black()}`};
 `;
 
 function MenuButton({
@@ -52,18 +56,24 @@ function MenuButton({
   text,
   caption,
   isMobile,
+  onClick,
 }: {
   disabled: boolean;
   text: string;
   caption: string;
   isMobile: boolean;
+  onClick?: any;
 }) {
   return (
     <ButtonWrapper>
-      <ButtonContainer disabled={disabled} isMobile={isMobile}>
+      <ButtonContainer
+        disabled={disabled}
+        isMobile={isMobile}
+        onClick={onClick}
+      >
         {text}
       </ButtonContainer>
-      <ButtonCaption>{caption}</ButtonCaption>
+      <ButtonCaption disabled={disabled}>{caption}</ButtonCaption>
     </ButtonWrapper>
   );
 }
