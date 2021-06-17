@@ -1,3 +1,13 @@
+// data state
+export const CHARACTERS = "characters";
+export const QUESTIONS = "questions";
+export const SPELLS = "spells";
+
+// data reducers
+export const RESET_DATA = "RESET_DATA";
+export const SET_FULL_DATA = "SET_FULL_DATA";
+export const SET_CATEGORY_DATA = "SET_CATEGORY_DATA";
+
 // ui state
 export const BACKGROUND = "background";
 
