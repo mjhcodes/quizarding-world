@@ -23,7 +23,9 @@ const MenuContainerWrapper = styled.div`
     isMobile ? "1rem 3rem" : "2rem 4rem"};
   height: ${({ isMobile }: StyleProps) => (isMobile ? "90vh" : "80vh")};
   width: ${({ isMobile }: StyleProps) => (isMobile ? "90%" : "80%")};
-  max-width: 600px;
+  min-height: 600px;
+  max-height: 800px;
+  max-width: 400px;
   border-radius: 50px;
   background: linear-gradient(
       180deg,

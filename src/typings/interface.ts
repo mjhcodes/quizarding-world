@@ -19,7 +19,6 @@ export interface CharacterButtonProps {
 }
 
 export interface CharacterWindowProps {
-  isMobile: boolean;
   characters: object[];
 }
 
