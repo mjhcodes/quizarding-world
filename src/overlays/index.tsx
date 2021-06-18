@@ -2,11 +2,7 @@ import { connect } from "react-redux";
 import CharacterSelection from "./CharacterSelection";
 import GameSelection from "./GameSelection";
 import Loading from "./Loading";
-
-interface OverlayVisibility {
-  gameSelection: boolean;
-  characterSelection: boolean;
-}
+import { OverlayVisibility } from "../typings/interface";
 
 function RenderOverlays({
   isLoading,

@@ -2,8 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import QWStyle from "../style/QWStyle";
+import { MenuButtonProps } from "../typings/interface";
 
-interface Props {
+interface StyleProps {
   disabled: boolean;
   isMobile?: boolean;
 }
@@ -22,16 +23,16 @@ const ButtonContainer = styled.button`
   max-width: 400px;
   border: none;
   border-radius: 25px;
-  background-color: ${(props: Props) =>
-    props.disabled ? `${QWStyle.colors.Red(0.6)}` : `${QWStyle.colors.Red()}`};
+  background-color: ${({ disabled }: StyleProps) =>
+    disabled ? `${QWStyle.colors.Red(0.6)}` : `${QWStyle.colors.Red()}`};
   box-shadow: 0px 4px 4px 0px ${QWStyle.colors.Black(0.25)};
-  cursor: ${(props: Props) => (props.disabled ? "not-allowed" : "pointer")};
-  font-size: ${(props: Props) => (props.isMobile ? "1.25rem" : "1.75rem")};
+  cursor: ${({ disabled }: StyleProps) =>
+    disabled ? "not-allowed" : "pointer"};
+  font-size: ${({ isMobile }: StyleProps) =>
+    isMobile ? "1.25rem" : "1.75rem"};
   font-family: Montserrat;
-  color: ${(props: Props) =>
-    props.disabled
-      ? `${QWStyle.colors.White(0.6)}`
-      : `${QWStyle.colors.White()}`};
+  color: ${({ disabled }: StyleProps) =>
+    disabled ? `${QWStyle.colors.White(0.6)}` : `${QWStyle.colors.White()}`};
   letter-spacing: 0.02em;
 
   :active {
@@ -45,10 +46,8 @@ const ButtonCaption = styled.p`
   text-align: center;
   font-family: Montserrat;
   letter-spacing: 0.02em;
-  color: ${(props: Props) =>
-    props.disabled
-      ? `${QWStyle.colors.Black(0.6)}`
-      : `${QWStyle.colors.Black()}`};
+  color: ${({ disabled }: StyleProps) =>
+    disabled ? `${QWStyle.colors.Black(0.6)}` : `${QWStyle.colors.Black()}`};
 `;
 
 function MenuButton({
@@ -57,13 +56,7 @@ function MenuButton({
   caption,
   isMobile,
   onClick,
-}: {
-  disabled: boolean;
-  text: string;
-  caption: string;
-  isMobile: boolean;
-  onClick?: any;
-}) {
+}: MenuButtonProps) {
   return (
     <ButtonWrapper>
       <ButtonContainer

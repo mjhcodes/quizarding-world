@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import styled from "styled-components";
 import QWStyle from "../style/QWStyle";
+import { MenuContainerProps } from "../typings/interface";
 
-interface Props {
+interface StyleProps {
   isMobile: boolean;
 }
 
@@ -10,7 +11,7 @@ const MenuContainerSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${(props: Props) => (props.isMobile ? "100%" : "50%")};
+  width: ${({ isMobile }: StyleProps) => (isMobile ? "100%" : "50%")};
 `;
 
 const MenuContainerWrapper = styled.div`
@@ -18,9 +19,10 @@ const MenuContainerWrapper = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: ${(props: Props) => (props.isMobile ? "1rem 3rem" : "2rem 4rem")};
-  height: ${(props: Props) => (props.isMobile ? "90vh" : "80vh")};
-  width: ${(props: Props) => (props.isMobile ? "90%" : "80%")};
+  padding: ${({ isMobile }: StyleProps) =>
+    isMobile ? "1rem 3rem" : "2rem 4rem"};
+  height: ${({ isMobile }: StyleProps) => (isMobile ? "90vh" : "80vh")};
+  width: ${({ isMobile }: StyleProps) => (isMobile ? "90%" : "80%")};
   max-width: 600px;
   border-radius: 50px;
   background: linear-gradient(
@@ -32,13 +34,7 @@ const MenuContainerWrapper = styled.div`
   box-shadow: 0px 4px 4px ${QWStyle.colors.Black(0.25)};
 `;
 
-function MenuContainer({
-  children,
-  isMobile,
-}: {
-  children: any;
-  isMobile: boolean;
-}) {
+function MenuContainer({ children, isMobile }: MenuContainerProps) {
   return (
     <MenuContainerSection isMobile={isMobile}>
       <MenuContainerWrapper isMobile={isMobile}>

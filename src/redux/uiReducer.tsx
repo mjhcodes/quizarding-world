@@ -1,15 +1,11 @@
 import * as DK from "./dataKeys";
+import { OverlayVisibility } from "../typings/interface";
 
 interface InitialState {
   background: string;
   isLoading: boolean;
   isMobile: boolean;
-  overlayVisibility: OverLayVisibility;
-}
-
-interface OverLayVisibility {
-  characterSelection: boolean;
-  gameSelection: boolean;
+  overlayVisibility: OverlayVisibility;
 }
 
 const initialState: InitialState = {
