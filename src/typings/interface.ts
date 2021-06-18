@@ -10,6 +10,7 @@ export interface OverlayVisibility {
 export interface CharacterObject {
   full_name?: string;
   first_name?: string;
+  house?: string;
 }
 
 // component props
