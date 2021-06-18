@@ -14,14 +14,14 @@ const ButtonWrapper = styled.div`
 `;
 
 const ButtonContainer = styled.button`
-  width: 75px;
-  height: 75px;
+  width: 4.5rem;
+  height: 4.5rem;
   border: none;
   border-radius: 50%;
   background-color: ${QWStyle.colors.Red()};
   box-shadow: 0px 4px 4px 0px ${QWStyle.colors.Black(0.25)};
   cursor: pointer;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 
   :hover {
     animation: 1.5s linear 0s infinite alternate wobble;
@@ -53,7 +53,7 @@ const ButtonContainer = styled.button`
 `;
 
 const ButtonCaption = styled.p`
-  margin: 0.75rem 0 1rem 0;
+  margin: 0.75rem 0 0;
   text-align: center;
   font-family: Montserrat;
   letter-spacing: 0.02em;
