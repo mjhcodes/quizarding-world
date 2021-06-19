@@ -39,6 +39,12 @@ export interface MenuButtonProps {
   onClick?: any;
 }
 
+export interface MenuCloseButtonProps {
+  dispatch: any;
+  characterSelection: boolean;
+  selected_character: object;
+}
+
 export interface MenuContainerProps {
   children: any;
   isMobile: boolean;

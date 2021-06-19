@@ -1,7 +1,10 @@
 import { connect } from "react-redux";
 import styled from "styled-components";
+import MenuCloseButton from "./MenuCloseButton";
 import QWStyle from "../style/QWStyle";
 import { MenuContainerProps } from "../typings/interface";
+
+// styled components
 
 interface StyleProps {
   isMobile: boolean;
@@ -15,6 +18,7 @@ const MenuContainerSection = styled.section`
 `;
 
 const MenuContainerWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -36,10 +40,13 @@ const MenuContainerWrapper = styled.div`
   box-shadow: 0px 4px 4px ${QWStyle.colors.Black(0.25)};
 `;
 
+/** final component  **/
+
 function MenuContainer({ children, isMobile }: MenuContainerProps) {
   return (
     <MenuContainerSection isMobile={isMobile}>
       <MenuContainerWrapper isMobile={isMobile}>
+        <MenuCloseButton />
         {children}
       </MenuContainerWrapper>
     </MenuContainerSection>
