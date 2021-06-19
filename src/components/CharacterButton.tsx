@@ -7,6 +7,10 @@ import { setObject, toggleValue } from "../utils/formUtil";
 
 // styled components
 
+interface StyleProps {
+  isShuffling: boolean;
+}
+
 const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,7 +25,8 @@ const ButtonContainer = styled.button`
   border-radius: 50%;
   background-color: ${QWStyle.colors.Red()};
   box-shadow: 0px 4px 4px 0px ${QWStyle.colors.Black(0.25)};
-  cursor: pointer;
+  cursor: ${({ isShuffling }: StyleProps) =>
+    isShuffling ? "not-allowed" : "pointer"};
   font-size: 1.5rem;
 
   :hover {
@@ -66,9 +71,12 @@ const ButtonCaption = styled.p`
 function CharacterButton({
   dispatch,
   caption,
+  isShuffling,
   characters,
 }: CharacterButtonProps) {
   function selectRandomCharacter() {
+    if (isShuffling) return;
+
     toggleValue(dispatch, "isShuffling", true);
     const shuffle = setInterval(() => {
       const randomNum = Math.floor(Math.random() * characters.length);
@@ -84,7 +92,12 @@ function CharacterButton({
 
   return (
     <ButtonWrapper>
-      <ButtonContainer onClick={selectRandomCharacter}>🧪</ButtonContainer>
+      <ButtonContainer
+        isShuffling={isShuffling}
+        onClick={selectRandomCharacter}
+      >
+        🧪
+      </ButtonContainer>
       <ButtonCaption>{caption}</ButtonCaption>
     </ButtonWrapper>
   );
@@ -92,7 +105,7 @@ function CharacterButton({
 
 export default connect(
   (state: any) => ({
-    isMobile: state.ui.isMobile,
+    isShuffling: state.form.isShuffling,
     characters: state.data.characters,
   }),
   (dispatch) => ({ dispatch })

@@ -23,6 +23,7 @@ export interface CharacterObject {
 export interface CharacterButtonProps {
   dispatch: any;
   caption: string;
+  isShuffling: boolean;
   characters: object[];
 }
 
