@@ -1,4 +1,11 @@
+// form state
+export const SELECTED_CHARACTER = "selected_character";
+
+// form reducers
+export const SET_OBJECT = "SET_OBJECT";
+
 // data state
+
 export const CHARACTERS = "characters";
 export const QUESTIONS = "questions";
 export const SPELLS = "spells";
