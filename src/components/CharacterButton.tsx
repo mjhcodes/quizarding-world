@@ -2,7 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import QWStyle from "../style/QWStyle";
-import { CharacterButtonProps } from "../typings/interface";
+import { CharacterButtonProps, CharacterObject } from "../typings/interface";
+import { setObject, toggleValue } from "../utils/formUtil";
 
 // styled components
 
@@ -38,7 +39,7 @@ const ButtonContainer = styled.button`
   }
 
   :focus {
-    animation: spin 0.75s linear 0s infinite;
+    animation: spin 3s linear 0s;
     box-shadow: 0 0 50px 6px ${QWStyle.colors.Green(0.25)};
   }
 
@@ -47,7 +48,7 @@ const ButtonContainer = styled.button`
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+      transform: rotate(1800deg);
     }
   }
 `;
@@ -62,10 +63,28 @@ const ButtonCaption = styled.p`
 
 /** final component  **/
 
-function CharacterButton({ caption }: CharacterButtonProps) {
+function CharacterButton({
+  dispatch,
+  caption,
+  characters,
+}: CharacterButtonProps) {
+  function selectRandomCharacter() {
+    toggleValue(dispatch, "isShuffling", true);
+    const shuffle = setInterval(() => {
+      const randomNum = Math.floor(Math.random() * characters.length);
+      const character: CharacterObject = characters[randomNum];
+      setObject(dispatch, "selected_character", character);
+    }, 250);
+
+    setTimeout(() => {
+      clearInterval(shuffle);
+      toggleValue(dispatch, "isShuffling", false);
+    }, 3000);
+  }
+
   return (
     <ButtonWrapper>
-      <ButtonContainer>🧪</ButtonContainer>
+      <ButtonContainer onClick={selectRandomCharacter}>🧪</ButtonContainer>
       <ButtonCaption>{caption}</ButtonCaption>
     </ButtonWrapper>
   );
@@ -74,6 +93,7 @@ function CharacterButton({ caption }: CharacterButtonProps) {
 export default connect(
   (state: any) => ({
     isMobile: state.ui.isMobile,
+    characters: state.data.characters,
   }),
   (dispatch) => ({ dispatch })
 )(CharacterButton);

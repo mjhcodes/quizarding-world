@@ -8,19 +8,27 @@ export interface OverlayVisibility {
 // data
 
 export interface CharacterObject {
+  id?: number;
   full_name?: string;
   first_name?: string;
+  last_name?: string;
   house?: string;
+  img?: string;
+  wand?: object;
+  possessions?: object[];
 }
 
 // component props
 
 export interface CharacterButtonProps {
+  dispatch: any;
   caption: string;
+  characters: object[];
 }
 
 export interface CharacterWindowProps {
-  characters: object[];
+  isShuffling: boolean;
+  selected_character: object;
 }
 
 export interface MenuButtonProps {

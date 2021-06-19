@@ -1,31 +1,36 @@
+import _ from "lodash";
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import _ from "lodash";
 import { mapHouseToColor } from "../style/colorMaps";
 import QWStyle from "../style/QWStyle";
-import { CharacterWindowProps, CharacterObject } from "../typings/interface";
+import { CharacterWindowProps } from "../typings/interface";
 
 interface StyleProps {
-  house: string;
+  isShuffling?: boolean;
+  house?: string;
 }
 
 const WindowWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: ${({ isShuffling }: StyleProps) =>
+    isShuffling ? "blur(10px)" : "blur(0)"};
 `;
 
 const Window = styled.img`
   height: 323.5px;
   width: 250px;
-  border: ${({ house }: StyleProps) => `10px solid ${mapHouseToColor[house]}`};
+  border: ${({ house }: StyleProps) =>
+    `10px solid ${house ? mapHouseToColor[house] : QWStyle.colors.Black()}`};
   border-radius: 20px;
   background-color: ${QWStyle.colors.White()};
 `;
 
 const WindowCaption = styled.h3`
   margin-top: 0.5rem;
+  min-height: 2.3125rem;
   text-align: center;
   font-family: Lora;
   font-size: 32px;
@@ -33,26 +38,34 @@ const WindowCaption = styled.h3`
   text-transform: capitalize;
 `;
 
-function CharacterWindow({ characters }: CharacterWindowProps) {
-  const randomNum = Math.floor(Math.random() * characters.length);
-  const character: CharacterObject = characters[randomNum];
-  const first_name = _.get(character, "first_name", "");
-  const full_name = _.get(character, "full_name", "");
-  const house = _.get(character, "house", "");
+function CharacterWindow({
+  isShuffling,
+  selected_character,
+}: CharacterWindowProps) {
+  const first_name = _.get(selected_character, "first_name", "");
+  const full_name = _.get(selected_character, "full_name", "");
+  const house = _.get(selected_character, "house", "");
+
+  const windowImg = first_name
+    ? `/images/characters/${first_name}/avatar.png`
+    : `/images/misc/polyjuice.png`;
+  const altText = full_name
+    ? `Headshot of ${full_name}`
+    : "Cauldron of boiling polyjuice";
 
   return (
-    <WindowWrapper>
-      <Window
-        src={`/images/characters/${first_name}/avatar.png`}
-        alt={`Headshot of ${full_name}`}
-        house={house}
-      />
-      <WindowCaption>{full_name}</WindowCaption>
+    <WindowWrapper isShuffling={isShuffling}>
+      <Window src={windowImg} alt={altText} house={house} />
+      <WindowCaption>{isShuffling ? "" : full_name}</WindowCaption>
     </WindowWrapper>
   );
 }
 
 export default connect(
-  (state: any) => ({ characters: state.data.characters }),
+  (state: any) => ({
+    characters: state.data.characters,
+    isShuffling: state.form.isShuffling,
+    selected_character: state.form.selected_character,
+  }),
   {}
 )(CharacterWindow);
