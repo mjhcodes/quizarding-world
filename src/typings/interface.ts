@@ -3,6 +3,7 @@
 export interface OverlayVisibility {
   characterSelection: boolean;
   gameSelection: boolean;
+  gameScreen: boolean;
 }
 
 // data
@@ -25,6 +26,14 @@ export interface CharacterButtonProps {
   caption: string;
   isShuffling: boolean;
   characters: object[];
+}
+
+export interface CharacterCaptionProps {
+  selected_character: object;
+}
+
+export interface CharacterSelectionProps {
+  isCharacterSelected: boolean;
 }
 
 export interface CharacterWindowProps {

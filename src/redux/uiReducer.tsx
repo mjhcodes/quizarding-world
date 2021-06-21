@@ -15,6 +15,7 @@ const initialState: InitialState = {
   overlayVisibility: {
     characterSelection: false,
     gameSelection: true,
+    gameScreen: true,
   },
 };
 

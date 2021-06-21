@@ -4,6 +4,7 @@ import styled from "styled-components";
 import QWStyle from "../style/QWStyle";
 import { CharacterButtonProps, CharacterObject } from "../typings/interface";
 import { setObject, toggleValue } from "../utils/formUtil";
+import { toggleOverlay } from "../utils/uiUtil";
 
 // styled components
 
@@ -19,15 +20,15 @@ const ButtonWrapper = styled.div`
 `;
 
 const ButtonContainer = styled.button`
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   border: none;
   border-radius: 50%;
   background-color: ${QWStyle.colors.Red()};
   box-shadow: 0px 4px 4px 0px ${QWStyle.colors.Black(0.25)};
   cursor: ${({ isShuffling }: StyleProps) =>
     isShuffling ? "not-allowed" : "pointer"};
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 
   :hover {
     animation: 1.5s linear 0s infinite alternate wobble;
@@ -60,11 +61,19 @@ const ButtonContainer = styled.button`
 
 const ButtonCaption = styled.p`
   margin: 0.75rem 0 0;
+  width: 75%;
   text-align: center;
   font-family: Montserrat;
   letter-spacing: 0.02em;
   color: ${QWStyle.colors.Black()};
 `;
+
+// functions
+
+function sendToGameScreen(dispatch: any) {
+  toggleOverlay(dispatch, "characterSelection", false);
+  toggleOverlay(dispatch, "gameScreen", true);
+}
 
 /** final component  **/
 
@@ -87,6 +96,11 @@ function CharacterButton({
     setTimeout(() => {
       clearInterval(shuffle);
       toggleValue(dispatch, "isShuffling", false);
+      toggleValue(dispatch, "isCharacterSelected", true);
+
+      setTimeout(() => {
+        sendToGameScreen(dispatch);
+      }, 3000);
     }, 3000);
   }
 
