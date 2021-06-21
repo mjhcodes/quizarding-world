@@ -28,16 +28,6 @@ const Window = styled.img`
   background-color: ${QWStyle.colors.White()};
 `;
 
-const WindowCaption = styled.h3`
-  margin-top: 0.5rem;
-  min-height: 2.3125rem;
-  text-align: center;
-  font-family: Lora;
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: capitalize;
-`;
-
 function CharacterWindow({
   isShuffling,
   selected_character,
@@ -56,7 +46,6 @@ function CharacterWindow({
   return (
     <WindowWrapper isShuffling={isShuffling}>
       <Window src={windowImg} alt={altText} house={house} />
-      <WindowCaption>{isShuffling ? "" : full_name}</WindowCaption>
     </WindowWrapper>
   );
 }
