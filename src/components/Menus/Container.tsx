@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import MenuCloseButton from "./MenuCloseButton";
 import QWStyle from "../../style/QWStyle";
-import { MenuContainerProps } from "../../typings/interface";
+import { MenusContainerProps } from "../../typings/interface";
 
 // styled components
 
@@ -10,14 +10,14 @@ interface StyleProps {
   isMobile: boolean;
 }
 
-const MenuContainerSection = styled.section`
+const ContainerSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
   width: ${({ isMobile }: StyleProps) => (isMobile ? "100%" : "50%")};
 `;
 
-const MenuContainerWrapper = styled.div`
+const ContainerWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -42,14 +42,14 @@ const MenuContainerWrapper = styled.div`
 
 /** final component  **/
 
-function MenuContainer({ children, isMobile }: MenuContainerProps) {
+function Container({ children, isMobile }: MenusContainerProps) {
   return (
-    <MenuContainerSection isMobile={isMobile}>
-      <MenuContainerWrapper isMobile={isMobile}>
+    <ContainerSection isMobile={isMobile}>
+      <ContainerWrapper isMobile={isMobile}>
         <MenuCloseButton />
         {children}
-      </MenuContainerWrapper>
-    </MenuContainerSection>
+      </ContainerWrapper>
+    </ContainerSection>
   );
 }
 
@@ -58,4 +58,4 @@ export default connect(
     isMobile: state.ui.isMobile,
   }),
   (dispatch) => ({ dispatch })
-)(MenuContainer);
+)(Container);

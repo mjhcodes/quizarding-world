@@ -4,7 +4,7 @@ import styled from "styled-components";
 import CharacterButton from "../../components/Menus/CharacterButton";
 import CharacterCaption from "../../components/Menus/CharacterCaption";
 import CharacterWindow from "../../components/Menus/CharacterWindow";
-import MenuContainer from "../../components/Menus/MenuContainer";
+import Container from "../../components/Menus/Container";
 import QWStyle from "../../style/QWStyle";
 import { CharacterSelectionProps } from "../../typings/interface";
 import { getRandomExpression } from "../../utils/util";
@@ -21,7 +21,7 @@ function CharacterSelection({ isCharacterSelected }: CharacterSelectionProps) {
     : "POLYJUICE STATION";
 
   return (
-    <MenuContainer>
+    <Container>
       <Title>{title}</Title>
       <CharacterWindow />
 
@@ -30,7 +30,7 @@ function CharacterSelection({ isCharacterSelected }: CharacterSelectionProps) {
       ) : (
         <CharacterButton caption="Click the button above to drink the potion" />
       )}
-    </MenuContainer>
+    </Container>
   );
 }
 

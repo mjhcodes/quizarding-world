@@ -19,7 +19,7 @@ export interface CharacterObject {
   possessions?: object[];
 }
 
-// component props
+// props - main app
 
 export interface AppProps {
   dispatch: any;
@@ -28,6 +28,19 @@ export interface AppProps {
   isCharacterSelected: boolean;
   selected_character: object;
 }
+
+// props - containers
+
+export interface GameContainerProps {
+  children: any;
+}
+
+export interface MenusContainerProps {
+  children: any;
+  isMobile: boolean;
+}
+
+// props - components - menus
 
 export interface CharacterButtonProps {
   dispatch: any;
@@ -61,9 +74,4 @@ export interface MenuCloseButtonProps {
   dispatch: any;
   characterSelection: boolean;
   selected_character: object;
-}
-
-export interface MenuContainerProps {
-  children: any;
-  isMobile: boolean;
 }

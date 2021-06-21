@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import MenuButton from "../../components/Menus/MenuButton";
-import MenuContainer from "../../components/Menus/MenuContainer";
+import Container from "../../components/Menus/Container";
 import { toggleOverlay } from "../../utils/uiUtil";
 
 function selectFreePlay(dispatch: any) {
@@ -11,7 +11,7 @@ function selectFreePlay(dispatch: any) {
 
 function GameSelection({ dispatch }: { dispatch: any }) {
   return (
-    <MenuContainer>
+    <Container>
       <MenuButton
         disabled={false}
         text="FREE PLAY"
@@ -30,7 +30,7 @@ function GameSelection({ dispatch }: { dispatch: any }) {
         caption="Coming Soon!"
         // caption="Create New Account for Free"
       />
-    </MenuContainer>
+    </Container>
   );
 }
 

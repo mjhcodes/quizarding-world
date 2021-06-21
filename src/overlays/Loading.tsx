@@ -1,10 +1,10 @@
 import { LoadingIconWithWords } from "../components/LoadingIcons";
-import MenuContainer from "../components/Menus/MenuContainer";
+import Container from "../components/Menus/Container";
 
 export default function Loading() {
   return (
-    <MenuContainer>
+    <Container>
       <LoadingIconWithWords />
-    </MenuContainer>
+    </Container>
   );
 }
