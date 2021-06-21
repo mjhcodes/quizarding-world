@@ -1,12 +1,14 @@
 import * as DK from "./dataKeys";
 
 interface InitialState {
-  isShuffling: boolean;
+  [DK.IS_CHARACTER_SELECTED]: boolean;
+  [DK.IS_SHUFFLING]: boolean;
   [DK.SELECTED_CHARACTER]: object;
 }
 
 const initialState: InitialState = {
-  isShuffling: false,
+  [DK.IS_CHARACTER_SELECTED]: false,
+  [DK.IS_SHUFFLING]: false,
   [DK.SELECTED_CHARACTER]: {},
 };
 

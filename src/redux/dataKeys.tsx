@@ -1,4 +1,6 @@
 // form state
+export const IS_CHARACTER_SELECTED = "is_character_selected";
+export const IS_SHUFFLING = "is_shuffling";
 export const SELECTED_CHARACTER = "selected_character";
 
 // form reducers
