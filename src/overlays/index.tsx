@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import CharacterSelection from "./CharacterSelection";
 import GameScreen from "./GameScreen";
-import GameSelection from "./GameSelection";
 import Loading from "./Loading";
+import CharacterSelection from "./Menus/CharacterSelection";
+import GameSelection from "./Menus/GameSelection";
 import { OverlayVisibility } from "../typings/interface";
 
 function RenderOverlays({

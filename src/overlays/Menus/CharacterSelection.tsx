@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import CharacterButton from "../components/CharacterButton";
-import CharacterCaption from "../components/CharacterCaption";
-import CharacterWindow from "../components/CharacterWindow";
-import MenuContainer from "../components/MenuContainer";
-import QWStyle from "../style/QWStyle";
-import { CharacterSelectionProps } from "../typings/interface";
-import { getRandomExpression } from "../utils/util";
+import CharacterButton from "../../components/Menus/CharacterButton";
+import CharacterCaption from "../../components/Menus/CharacterCaption";
+import CharacterWindow from "../../components/Menus/CharacterWindow";
+import MenuContainer from "../../components/Menus/MenuContainer";
+import QWStyle from "../../style/QWStyle";
+import { CharacterSelectionProps } from "../../typings/interface";
+import { getRandomExpression } from "../../utils/util";
 
 const Title = styled.h2`
   text-align: center;

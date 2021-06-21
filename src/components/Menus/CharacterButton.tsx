@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import QWStyle from "../style/QWStyle";
-import { CharacterButtonProps, CharacterObject } from "../typings/interface";
-import { setObject, toggleValue } from "../utils/formUtil";
-import { toggleOverlay } from "../utils/uiUtil";
+import QWStyle from "../../style/QWStyle";
+import { CharacterButtonProps, CharacterObject } from "../../typings/interface";
+import { setObject, toggleValue } from "../../utils/formUtil";
+import { toggleOverlay } from "../../utils/uiUtil";
 
 // styled components
 

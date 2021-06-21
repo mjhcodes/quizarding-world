@@ -1,9 +1,9 @@
 import _ from "lodash";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import QWStyle from "../style/QWStyle";
-import { MenuCloseButtonProps } from "../typings/interface";
-import { toggleOverlay } from "../utils/uiUtil";
+import QWStyle from "../../style/QWStyle";
+import { MenuCloseButtonProps } from "../../typings/interface";
+import { toggleOverlay } from "../../utils/uiUtil";
 
 const CloseButton = styled.button`
   position: absolute;

@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import MenuButton from "../components/MenuButton";
-import MenuContainer from "../components/MenuContainer";
-import { toggleOverlay } from "../utils/uiUtil";
+import MenuButton from "../../components/Menus/MenuButton";
+import MenuContainer from "../../components/Menus/MenuContainer";
+import { toggleOverlay } from "../../utils/uiUtil";
 
 function selectFreePlay(dispatch: any) {
   toggleOverlay(dispatch, "gameSelection", false);

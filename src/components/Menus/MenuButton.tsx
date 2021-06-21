@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import QWStyle from "../style/QWStyle";
-import { MenuButtonProps } from "../typings/interface";
+import QWStyle from "../../style/QWStyle";
+import { MenuButtonProps } from "../../typings/interface";
 
 interface StyleProps {
   disabled: boolean;

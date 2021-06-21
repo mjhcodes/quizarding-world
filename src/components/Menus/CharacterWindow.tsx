@@ -2,9 +2,9 @@ import _ from "lodash";
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { mapHouseToColor } from "../style/colorMaps";
-import QWStyle from "../style/QWStyle";
-import { CharacterWindowProps } from "../typings/interface";
+import { mapHouseToColor } from "../../style/colorMaps";
+import QWStyle from "../../style/QWStyle";
+import { CharacterWindowProps } from "../../typings/interface";
 
 interface StyleProps {
   isShuffling?: boolean;

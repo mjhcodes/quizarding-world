@@ -1,5 +1,5 @@
 import { LoadingIconWithWords } from "../components/LoadingIcons";
-import MenuContainer from "../components/MenuContainer";
+import MenuContainer from "../components/Menus/MenuContainer";
 
 export default function Loading() {
   return (

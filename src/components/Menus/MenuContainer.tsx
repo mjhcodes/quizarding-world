@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import styled from "styled-components";
 import MenuCloseButton from "./MenuCloseButton";
-import QWStyle from "../style/QWStyle";
-import { MenuContainerProps } from "../typings/interface";
+import QWStyle from "../../style/QWStyle";
+import { MenuContainerProps } from "../../typings/interface";
 
 // styled components
 
