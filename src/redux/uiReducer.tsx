@@ -14,8 +14,8 @@ const initialState: InitialState = {
   isMobile: true,
   overlayVisibility: {
     characterSelection: false,
+    gameScreen: false,
     gameSelection: true,
-    gameScreen: true,
   },
 };
 

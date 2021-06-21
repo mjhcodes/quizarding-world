@@ -21,6 +21,14 @@ export interface CharacterObject {
 
 // component props
 
+export interface AppProps {
+  dispatch: any;
+  background: string;
+  gameScreen: boolean;
+  isCharacterSelected: boolean;
+  selected_character: object;
+}
+
 export interface CharacterButtonProps {
   dispatch: any;
   caption: string;
