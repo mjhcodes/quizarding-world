@@ -25,7 +25,7 @@ function App({
     if (window.innerWidth > QWStyle.ui.mobileBreakpoint) {
       toggleValue(dispatch, "isMobile", false);
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     fetchData(dispatch);
