@@ -8,9 +8,9 @@ export function setObject(dispatch: any, name: string, value: object) {
   });
 }
 
-export function toggleValue(dispatch: any, name: string, value: boolean) {
+export function toggleFormValue(dispatch: any, name: string, value: boolean) {
   dispatch({
-    type: DK.TOGGLE_VALUE,
+    type: DK.TOGGLE_FORM_VALUE,
     name,
     value,
   });

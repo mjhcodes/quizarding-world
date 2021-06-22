@@ -18,7 +18,7 @@ export default function formReducer(
 ) {
   switch (action.type) {
     case DK.SET_OBJECT:
-    case DK.TOGGLE_VALUE:
+    case DK.TOGGLE_FORM_VALUE:
       return {
         ...state,
         [action.name]: action.value,

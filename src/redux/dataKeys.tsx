@@ -5,6 +5,7 @@ export const SELECTED_CHARACTER = "selected_character";
 
 // form reducers
 export const SET_OBJECT = "SET_OBJECT";
+export const TOGGLE_FORM_VALUE = "TOGGLE_FORM_VALUE";
 
 // data state
 
