@@ -1,5 +1,7 @@
 import * as DK from "../redux/dataKeys";
 
+// character
+
 export function setCharacterObject(dispatch: any, name: string, value: object) {
   dispatch({
     type: DK.SET_CHARACTER_OBJECT,
@@ -15,6 +17,16 @@ export function toggleCharacterValue(
 ) {
   dispatch({
     type: DK.TOGGLE_CHARACTER_VALUE,
+    name,
+    value,
+  });
+}
+
+// game
+
+export function setGameObject(dispatch: any, name: string, value: object) {
+  dispatch({
+    type: DK.SET_GAME_OBJECT,
     name,
     value,
   });

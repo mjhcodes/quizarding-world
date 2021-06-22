@@ -62,7 +62,9 @@ export interface MenusContainerProps {
 // props - components - game
 
 export interface GameScreenProps {
+  dispatch: any;
   isMobile: boolean;
+  questions: object[];
 }
 
 export interface PossessionsProps {
@@ -71,7 +73,7 @@ export interface PossessionsProps {
 }
 
 export interface QuestionProps {
-  questions: object[];
+  question: object;
 }
 
 export interface TotalPointsProps {

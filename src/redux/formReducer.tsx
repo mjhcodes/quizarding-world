@@ -35,6 +35,14 @@ export default function formReducer(
           [action.name]: action.value,
         },
       };
+    case DK.SET_GAME_OBJECT:
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          [action.name]: action.value,
+        },
+      };
     default:
       return state;
   }

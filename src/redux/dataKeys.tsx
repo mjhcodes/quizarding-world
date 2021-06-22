@@ -15,6 +15,7 @@ export const AVAILABLE_SPELLS = "available_spells";
 // form reducers
 export const SET_CHARACTER_OBJECT = "SET_CHARACTER_OBJECT";
 export const TOGGLE_CHARACTER_VALUE = "TOGGLE_CHARACTER_VALUE";
+export const SET_GAME_OBJECT = "SET_GAME_OBJECT";
 
 // data state
 
