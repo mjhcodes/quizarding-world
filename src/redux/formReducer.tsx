@@ -2,20 +2,22 @@ import * as DK from "./dataKeys";
 import { FormCharacter, FormGame } from "../typings/interface";
 
 interface InitialState {
-  character: FormCharacter;
-  game: FormGame;
+  [DK.CHARACTER]: FormCharacter;
+  [DK.GAME]: FormGame;
 }
 
 const initialState: InitialState = {
-  character: {
+  [DK.CHARACTER]: {
     [DK.IS_CHARACTER_SELECTED]: false,
     [DK.IS_SHUFFLING]: false,
     [DK.SELECTED_CHARACTER]: {},
   },
-  game: {
-    total_points: 0,
-    current_question: {},
-    used_questions: [],
+  [DK.GAME]: {
+    [DK.TOTAL_POINTS]: 0,
+    [DK.CURRENT_ROUND]: 1,
+    [DK.CURRENT_QUESTION]: {},
+    [DK.USED_QUESTIONS]: [],
+    [DK.AVAILABLE_SPELLS]: [],
   },
 };
 

@@ -22,9 +22,11 @@ export interface FormCharacter {
 }
 
 export interface FormGame {
-  total_points: number;
-  current_question: object;
-  used_questions: object[];
+  [DK.TOTAL_POINTS]: number;
+  [DK.CURRENT_ROUND]: number;
+  [DK.CURRENT_QUESTION]: object;
+  [DK.USED_QUESTIONS]: object[];
+  [DK.AVAILABLE_SPELLS]: object[];
 }
 
 // ui
@@ -74,6 +76,7 @@ export interface QuestionProps {
 
 export interface TotalPointsProps {
   isMobile: boolean;
+  [DK.TOTAL_POINTS]: number;
 }
 
 // props - components - menus

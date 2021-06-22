@@ -1,7 +1,16 @@
-// form state
+// form state - characters
+export const CHARACTER = "character";
 export const IS_CHARACTER_SELECTED = "is_character_selected";
 export const IS_SHUFFLING = "is_shuffling";
 export const SELECTED_CHARACTER = "selected_character";
+
+// form state - game
+export const GAME = "game";
+export const TOTAL_POINTS = "total_points";
+export const CURRENT_ROUND = "current_round";
+export const CURRENT_QUESTION = "current_question";
+export const USED_QUESTIONS = "used_questions";
+export const AVAILABLE_SPELLS = "available_spells";
 
 // form reducers
 export const SET_CHARACTER_OBJECT = "SET_CHARACTER_OBJECT";
