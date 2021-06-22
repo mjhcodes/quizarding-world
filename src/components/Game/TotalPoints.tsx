@@ -29,10 +29,10 @@ const PointsCaption = styled.p`
   letter-spacing: 0.02em;
 `;
 
-function TotalPoints({ isMobile }: TotalPointsProps) {
+function TotalPoints({ isMobile, total_points }: TotalPointsProps) {
   return (
     <PointsWrapper>
-      <PointsSection isMobile={isMobile}>0</PointsSection>
+      <PointsSection isMobile={isMobile}>{total_points}</PointsSection>
       <PointsCaption isMobile={isMobile}>points</PointsCaption>
     </PointsWrapper>
   );
@@ -41,6 +41,7 @@ function TotalPoints({ isMobile }: TotalPointsProps) {
 export default connect(
   (state: any) => ({
     isMobile: state.ui.isMobile,
+    total_points: state.form.game.total_points,
   }),
   (dispatch) => ({ dispatch })
 )(TotalPoints);
