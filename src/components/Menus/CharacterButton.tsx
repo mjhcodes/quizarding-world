@@ -4,7 +4,7 @@ import styled from "styled-components";
 import * as DK from "../../redux/dataKeys";
 import QWStyle from "../../style/QWStyle";
 import { CharacterButtonProps, CharacterObject } from "../../typings/interface";
-import { setObject, toggleFormValue } from "../../utils/formUtil";
+import { setCharacterObject, toggleCharacterValue } from "../../utils/formUtil";
 import { toggleOverlay } from "../../utils/uiUtil";
 
 // styled components
@@ -87,17 +87,17 @@ function CharacterButton({
   function selectRandomCharacter() {
     if (is_shuffling) return;
 
-    toggleFormValue(dispatch, `${[DK.IS_SHUFFLING]}`, true);
+    toggleCharacterValue(dispatch, `${[DK.IS_SHUFFLING]}`, true);
     const shuffle = setInterval(() => {
       const randomNum = Math.floor(Math.random() * characters.length);
       const character: CharacterObject = characters[randomNum];
-      setObject(dispatch, `${[DK.SELECTED_CHARACTER]}`, character);
+      setCharacterObject(dispatch, `${[DK.SELECTED_CHARACTER]}`, character);
     }, 250);
 
     setTimeout(() => {
       clearInterval(shuffle);
-      toggleFormValue(dispatch, `${[DK.IS_SHUFFLING]}`, false);
-      toggleFormValue(dispatch, `${[DK.IS_CHARACTER_SELECTED]}`, true);
+      toggleCharacterValue(dispatch, `${[DK.IS_SHUFFLING]}`, false);
+      toggleCharacterValue(dispatch, `${[DK.IS_CHARACTER_SELECTED]}`, true);
 
       setTimeout(() => {
         sendToGameScreen(dispatch);
@@ -120,7 +120,7 @@ function CharacterButton({
 
 export default connect(
   (state: any) => ({
-    is_shuffling: state.form.is_shuffling,
+    is_shuffling: state.form.character.is_shuffling,
     characters: state.data.characters,
   }),
   (dispatch) => ({ dispatch })

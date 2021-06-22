@@ -46,8 +46,8 @@ export default connect(
   (state: any) => ({
     background: state.ui.background,
     game_screen: state.ui.overlayVisibility.game_screen,
-    is_character_selected: state.form.is_character_selected,
-    selected_character: state.form.selected_character,
+    is_character_selected: state.form.character.is_character_selected,
+    selected_character: state.form.character.selected_character,
   }),
   (dispatch) => ({ dispatch })
 )(App);

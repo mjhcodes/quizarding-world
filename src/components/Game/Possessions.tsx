@@ -42,7 +42,7 @@ function Possessions({ isMobile, selected_character }: PossessionsProps) {
 export default connect(
   (state: any) => ({
     isMobile: state.ui.isMobile,
-    selected_character: state.form.selected_character,
+    selected_character: state.form.character.selected_character,
   }),
   {}
 )(Possessions);

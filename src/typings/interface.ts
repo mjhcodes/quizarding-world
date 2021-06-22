@@ -1,13 +1,5 @@
 import * as DK from "../redux/dataKeys";
 
-// state
-
-export interface OverlayVisibility {
-  [DK.CHARACTER_SELECTION]: boolean;
-  [DK.GAME_SELECTION]: boolean;
-  [DK.GAME_SCREEN]: boolean;
-}
-
 // data
 
 export interface CharacterObject {
@@ -19,6 +11,28 @@ export interface CharacterObject {
   img?: string;
   wand?: object;
   possessions?: object[];
+}
+
+// form
+
+export interface FormCharacter {
+  [DK.IS_CHARACTER_SELECTED]: boolean;
+  [DK.IS_SHUFFLING]: boolean;
+  [DK.SELECTED_CHARACTER]: object;
+}
+
+export interface FormGame {
+  total_points: number;
+  current_question: object;
+  used_questions: object[];
+}
+
+// ui
+
+export interface OverlayVisibility {
+  [DK.CHARACTER_SELECTION]: boolean;
+  [DK.GAME_SELECTION]: boolean;
+  [DK.GAME_SCREEN]: boolean;
 }
 
 // props - main app
@@ -45,9 +59,17 @@ export interface MenusContainerProps {
 
 // props - components - game
 
+export interface GameScreenProps {
+  isMobile: boolean;
+}
+
 export interface PossessionsProps {
   isMobile: boolean;
   selected_character: object;
+}
+
+export interface QuestionProps {
+  questions: object[];
 }
 
 export interface TotalPointsProps {

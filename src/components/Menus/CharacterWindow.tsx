@@ -53,8 +53,8 @@ function CharacterWindow({
 export default connect(
   (state: any) => ({
     characters: state.data.characters,
-    is_shuffling: state.form.is_shuffling,
-    selected_character: state.form.selected_character,
+    is_shuffling: state.form.character.is_shuffling,
+    selected_character: state.form.character.selected_character,
   }),
   {}
 )(CharacterWindow);

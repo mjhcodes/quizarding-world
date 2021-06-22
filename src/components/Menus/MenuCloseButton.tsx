@@ -41,7 +41,7 @@ function MenuCloseButton({
 export default connect(
   (state: any) => ({
     character_selection: state.ui.overlayVisibility.character_selection,
-    selected_character: state.form.selected_character,
+    selected_character: state.form.character.selected_character,
   }),
   (dispatch) => ({ dispatch })
 )(MenuCloseButton);

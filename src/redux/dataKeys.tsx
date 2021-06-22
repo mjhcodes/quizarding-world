@@ -4,8 +4,8 @@ export const IS_SHUFFLING = "is_shuffling";
 export const SELECTED_CHARACTER = "selected_character";
 
 // form reducers
-export const SET_OBJECT = "SET_OBJECT";
-export const TOGGLE_FORM_VALUE = "TOGGLE_FORM_VALUE";
+export const SET_CHARACTER_OBJECT = "SET_CHARACTER_OBJECT";
+export const TOGGLE_CHARACTER_VALUE = "TOGGLE_CHARACTER_VALUE";
 
 // data state
 

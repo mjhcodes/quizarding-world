@@ -38,7 +38,7 @@ function CharacterSelection({
 
 export default connect(
   (state: any) => ({
-    is_character_selected: state.form.is_character_selected,
+    is_character_selected: state.form.character.is_character_selected,
   }),
   (dispatch) => ({ dispatch })
 )(CharacterSelection);

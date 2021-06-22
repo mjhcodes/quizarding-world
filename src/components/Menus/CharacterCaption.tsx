@@ -47,7 +47,7 @@ function CharacterCaption({ selected_character }: CharacterCaptionProps) {
 
 export default connect(
   (state: any) => ({
-    selected_character: state.form.selected_character,
+    selected_character: state.form.character.selected_character,
   }),
   {}
 )(CharacterCaption);

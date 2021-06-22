@@ -1,27 +1,37 @@
 import * as DK from "./dataKeys";
+import { FormCharacter, FormGame } from "../typings/interface";
 
 interface InitialState {
-  [DK.IS_CHARACTER_SELECTED]: boolean;
-  [DK.IS_SHUFFLING]: boolean;
-  [DK.SELECTED_CHARACTER]: object;
+  character: FormCharacter;
+  game: FormGame;
 }
 
 const initialState: InitialState = {
-  [DK.IS_CHARACTER_SELECTED]: false,
-  [DK.IS_SHUFFLING]: false,
-  [DK.SELECTED_CHARACTER]: {},
+  character: {
+    [DK.IS_CHARACTER_SELECTED]: false,
+    [DK.IS_SHUFFLING]: false,
+    [DK.SELECTED_CHARACTER]: {},
+  },
+  game: {
+    total_points: 0,
+    current_question: {},
+    used_questions: [],
+  },
 };
 
 export default function formReducer(
   state = initialState,
-  action: { type: string; name: string; value: object | boolean }
+  action: { type: string; name: string; value: boolean | number | object }
 ) {
   switch (action.type) {
-    case DK.SET_OBJECT:
-    case DK.TOGGLE_FORM_VALUE:
+    case DK.SET_CHARACTER_OBJECT:
+    case DK.TOGGLE_CHARACTER_VALUE:
       return {
         ...state,
-        [action.name]: action.value,
+        character: {
+          ...state.character,
+          [action.name]: action.value,
+        },
       };
     default:
       return state;
