@@ -26,7 +26,7 @@ export interface CharacterObject {
 export interface AppProps {
   dispatch: any;
   background: string;
-  gameScreen: boolean;
+  [DK.GAME_SCREEN]: boolean;
   [DK.IS_CHARACTER_SELECTED]: boolean;
   selected_character: object;
 }
