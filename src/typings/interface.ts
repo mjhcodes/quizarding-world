@@ -73,7 +73,7 @@ export interface PossessionsProps {
 }
 
 export interface QuestionProps {
-  question: object;
+  current_question: object;
 }
 
 export interface TotalPointsProps {
