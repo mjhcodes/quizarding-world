@@ -45,6 +45,11 @@ export interface MenusContainerProps {
 
 // props - components - game
 
+export interface PossessionsProps {
+  isMobile: boolean;
+  selected_character: object;
+}
+
 export interface TotalPointsProps {
   isMobile: boolean;
 }

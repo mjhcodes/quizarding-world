@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Container from "../components/Game/Container";
+import Possessions from "../components/Game/Possessions";
 import TotalPoints from "../components/Game/TotalPoints";
 
 const TopSection = styled.div`
@@ -23,7 +24,7 @@ export default function GameScreen() {
     <Container>
       <TopSection>
         <TotalPoints />
-        <h1>4 badges</h1>
+        <Possessions />
       </TopSection>
       <MainSection>
         <h1>center</h1>
