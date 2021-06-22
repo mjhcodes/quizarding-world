@@ -19,6 +19,9 @@ export const SET_CATEGORY_DATA = "SET_CATEGORY_DATA";
 
 // ui state
 export const BACKGROUND = "background";
+export const CHARACTER_SELECTION = "character_selection";
+export const GAME_SELECTION = "game_selection";
+export const GAME_SCREEN = "game_screen";
 
 // ui reducers
 export const SET_VALUE = "SET_VALUE";

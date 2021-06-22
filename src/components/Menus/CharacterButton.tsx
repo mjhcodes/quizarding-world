@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import * as DK from "../../redux/dataKeys";
 import QWStyle from "../../style/QWStyle";
 import { CharacterButtonProps, CharacterObject } from "../../typings/interface";
 import { setObject, toggleValue } from "../../utils/formUtil";
@@ -9,7 +10,7 @@ import { toggleOverlay } from "../../utils/uiUtil";
 // styled components
 
 interface StyleProps {
-  isShuffling: boolean;
+  is_shuffling: boolean;
 }
 
 const ButtonWrapper = styled.div`
@@ -26,8 +27,8 @@ const ButtonContainer = styled.button`
   border-radius: 50%;
   background-color: ${QWStyle.colors.Red()};
   box-shadow: 0px 4px 4px 0px ${QWStyle.colors.Black(0.25)};
-  cursor: ${({ isShuffling }: StyleProps) =>
-    isShuffling ? "not-allowed" : "pointer"};
+  cursor: ${({ is_shuffling }: StyleProps) =>
+    is_shuffling ? "not-allowed" : "pointer"};
   font-size: 1.25rem;
 
   :hover {
@@ -71,8 +72,8 @@ const ButtonCaption = styled.p`
 // functions
 
 function sendToGameScreen(dispatch: any) {
-  toggleOverlay(dispatch, "characterSelection", false);
-  toggleOverlay(dispatch, "gameScreen", true);
+  toggleOverlay(dispatch, `${[DK.CHARACTER_SELECTION]}`, false);
+  toggleOverlay(dispatch, `${[DK.GAME_SCREEN]}`, true);
 }
 
 /** final component  **/
@@ -80,23 +81,23 @@ function sendToGameScreen(dispatch: any) {
 function CharacterButton({
   dispatch,
   caption,
-  isShuffling,
+  is_shuffling,
   characters,
 }: CharacterButtonProps) {
   function selectRandomCharacter() {
-    if (isShuffling) return;
+    if (is_shuffling) return;
 
-    toggleValue(dispatch, "isShuffling", true);
+    toggleValue(dispatch, `${[DK.IS_SHUFFLING]}`, true);
     const shuffle = setInterval(() => {
       const randomNum = Math.floor(Math.random() * characters.length);
       const character: CharacterObject = characters[randomNum];
-      setObject(dispatch, "selected_character", character);
+      setObject(dispatch, `${[DK.SELECTED_CHARACTER]}`, character);
     }, 250);
 
     setTimeout(() => {
       clearInterval(shuffle);
-      toggleValue(dispatch, "isShuffling", false);
-      toggleValue(dispatch, "isCharacterSelected", true);
+      toggleValue(dispatch, `${[DK.IS_SHUFFLING]}`, false);
+      toggleValue(dispatch, `${[DK.IS_CHARACTER_SELECTED]}`, true);
 
       setTimeout(() => {
         sendToGameScreen(dispatch);
@@ -107,7 +108,7 @@ function CharacterButton({
   return (
     <ButtonWrapper>
       <ButtonContainer
-        isShuffling={isShuffling}
+        is_shuffling={is_shuffling}
         onClick={selectRandomCharacter}
       >
         🧪
@@ -119,7 +120,7 @@ function CharacterButton({
 
 export default connect(
   (state: any) => ({
-    isShuffling: state.form.isShuffling,
+    is_shuffling: state.form.is_shuffling,
     characters: state.data.characters,
   }),
   (dispatch) => ({ dispatch })

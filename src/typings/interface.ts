@@ -1,9 +1,11 @@
+import * as DK from "../redux/dataKeys";
+
 // state
 
 export interface OverlayVisibility {
-  characterSelection: boolean;
-  gameSelection: boolean;
-  gameScreen: boolean;
+  [DK.CHARACTER_SELECTION]: boolean;
+  [DK.GAME_SELECTION]: boolean;
+  [DK.GAME_SCREEN]: boolean;
 }
 
 // data
@@ -25,7 +27,7 @@ export interface AppProps {
   dispatch: any;
   background: string;
   gameScreen: boolean;
-  isCharacterSelected: boolean;
+  [DK.IS_CHARACTER_SELECTED]: boolean;
   selected_character: object;
 }
 
@@ -33,10 +35,17 @@ export interface AppProps {
 
 export interface GameContainerProps {
   children: any;
+  isMobile: boolean;
 }
 
 export interface MenusContainerProps {
   children: any;
+  isMobile: boolean;
+}
+
+// props - components - game
+
+export interface TotalPointsProps {
   isMobile: boolean;
 }
 
@@ -45,7 +54,7 @@ export interface MenusContainerProps {
 export interface CharacterButtonProps {
   dispatch: any;
   caption: string;
-  isShuffling: boolean;
+  [DK.IS_SHUFFLING]: boolean;
   characters: object[];
 }
 
@@ -54,11 +63,11 @@ export interface CharacterCaptionProps {
 }
 
 export interface CharacterSelectionProps {
-  isCharacterSelected: boolean;
+  [DK.IS_CHARACTER_SELECTED]: boolean;
 }
 
 export interface CharacterWindowProps {
-  isShuffling: boolean;
+  [DK.IS_SHUFFLING]: boolean;
   selected_character: object;
 }
 
@@ -72,6 +81,6 @@ export interface MenuButtonProps {
 
 export interface MenuCloseButtonProps {
   dispatch: any;
-  characterSelection: boolean;
+  [DK.CHARACTER_SELECTION]: boolean;
   selected_character: object;
 }

@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import * as DK from "../redux/dataKeys";
 import GameScreen from "./GameScreen";
 import Loading from "./Loading";
 import CharacterSelection from "./Menus/CharacterSelection";
@@ -16,15 +17,15 @@ function RenderOverlays({
     return <Loading />;
   }
 
-  if (overlayVisibility.gameSelection) {
+  if ("true" === `${overlayVisibility[DK.GAME_SELECTION]}`) {
     return <GameSelection />;
   }
 
-  if (overlayVisibility.characterSelection) {
+  if ("true" === `${overlayVisibility[DK.CHARACTER_SELECTION]}`) {
     return <CharacterSelection />;
   }
 
-  if (overlayVisibility.gameScreen) {
+  if ("true" === `${overlayVisibility[DK.GAME_SCREEN]}`) {
     return <GameScreen />;
   }
 

@@ -7,7 +7,7 @@ import QWStyle from "../../style/QWStyle";
 import { CharacterWindowProps } from "../../typings/interface";
 
 interface StyleProps {
-  isShuffling?: boolean;
+  is_shuffling?: boolean;
   house?: string;
 }
 
@@ -15,8 +15,8 @@ const WindowWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  filter: ${({ isShuffling }: StyleProps) =>
-    isShuffling ? "blur(10px)" : "blur(0)"};
+  filter: ${({ is_shuffling }: StyleProps) =>
+    is_shuffling ? "blur(10px)" : "blur(0)"};
 `;
 
 const Window = styled.img`
@@ -29,7 +29,7 @@ const Window = styled.img`
 `;
 
 function CharacterWindow({
-  isShuffling,
+  is_shuffling,
   selected_character,
 }: CharacterWindowProps) {
   const first_name = _.get(selected_character, "first_name", "");
@@ -44,7 +44,7 @@ function CharacterWindow({
     : "Cauldron of boiling polyjuice";
 
   return (
-    <WindowWrapper isShuffling={isShuffling}>
+    <WindowWrapper is_shuffling={is_shuffling}>
       <Window src={windowImg} alt={altText} house={house} />
     </WindowWrapper>
   );
@@ -53,7 +53,7 @@ function CharacterWindow({
 export default connect(
   (state: any) => ({
     characters: state.data.characters,
-    isShuffling: state.form.isShuffling,
+    is_shuffling: state.form.is_shuffling,
     selected_character: state.form.selected_character,
   }),
   {}

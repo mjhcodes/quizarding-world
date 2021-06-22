@@ -2,11 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import MenuButton from "../../components/Menus/MenuButton";
 import Container from "../../components/Menus/Container";
+import * as DK from "../../redux/dataKeys";
 import { toggleOverlay } from "../../utils/uiUtil";
 
 function selectFreePlay(dispatch: any) {
-  toggleOverlay(dispatch, "gameSelection", false);
-  toggleOverlay(dispatch, "characterSelection", true);
+  toggleOverlay(dispatch, `${[DK.GAME_SELECTION]}`, false);
+  toggleOverlay(dispatch, `${[DK.CHARACTER_SELECTION]}`, true);
 }
 
 function GameSelection({ dispatch }: { dispatch: any }) {

@@ -13,9 +13,9 @@ const initialState: InitialState = {
   isLoading: false,
   isMobile: true,
   overlayVisibility: {
-    characterSelection: false,
-    gameScreen: false,
-    gameSelection: true,
+    [DK.CHARACTER_SELECTION]: false,
+    [DK.GAME_SCREEN]: false,
+    [DK.GAME_SELECTION]: true,
   },
 };
 

@@ -15,8 +15,10 @@ const Title = styled.h2`
   color: ${QWStyle.colors.Black()};
 `;
 
-function CharacterSelection({ isCharacterSelected }: CharacterSelectionProps) {
-  const title = isCharacterSelected
+function CharacterSelection({
+  is_character_selected,
+}: CharacterSelectionProps) {
+  const title = is_character_selected
     ? getRandomExpression()
     : "POLYJUICE STATION";
 
@@ -25,7 +27,7 @@ function CharacterSelection({ isCharacterSelected }: CharacterSelectionProps) {
       <Title>{title}</Title>
       <CharacterWindow />
 
-      {isCharacterSelected ? (
+      {is_character_selected ? (
         <CharacterCaption />
       ) : (
         <CharacterButton caption="Click the button above to drink the potion" />
@@ -36,7 +38,7 @@ function CharacterSelection({ isCharacterSelected }: CharacterSelectionProps) {
 
 export default connect(
   (state: any) => ({
-    isCharacterSelected: state.form.isCharacterSelected,
+    is_character_selected: state.form.is_character_selected,
   }),
   (dispatch) => ({ dispatch })
 )(CharacterSelection);

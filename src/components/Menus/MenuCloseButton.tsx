@@ -1,6 +1,7 @@
 import _ from "lodash";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import * as DK from "../../redux/dataKeys";
 import QWStyle from "../../style/QWStyle";
 import { MenuCloseButtonProps } from "../../typings/interface";
 import { toggleOverlay } from "../../utils/uiUtil";
@@ -21,25 +22,25 @@ const CloseButton = styled.button`
 // functions
 
 function returnToMenu(dispatch: any) {
-  toggleOverlay(dispatch, "characterSelection", false);
-  toggleOverlay(dispatch, "gameSelection", true);
+  toggleOverlay(dispatch, `${[DK.CHARACTER_SELECTION]}`, false);
+  toggleOverlay(dispatch, `${[DK.GAME_SELECTION]}`, true);
 }
 
 /** final component  **/
 
 function MenuCloseButton({
   dispatch,
-  characterSelection,
+  character_selection,
   selected_character,
 }: MenuCloseButtonProps) {
-  return characterSelection && _.isEmpty(selected_character) ? (
+  return character_selection && _.isEmpty(selected_character) ? (
     <CloseButton onClick={() => returnToMenu(dispatch)}>X</CloseButton>
   ) : null;
 }
 
 export default connect(
   (state: any) => ({
-    characterSelection: state.ui.overlayVisibility.characterSelection,
+    character_selection: state.ui.overlayVisibility.character_selection,
     selected_character: state.form.selected_character,
   }),
   (dispatch) => ({ dispatch })
