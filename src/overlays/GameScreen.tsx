@@ -1,7 +1,19 @@
+import { useEffect } from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
+import Answers from "../components/Game/Answers";
 import Container from "../components/Game/Container";
 import Possessions from "../components/Game/Possessions";
+import Question from "../components/Game/Question";
+import Spells from "../components/Game/Spells";
 import TotalPoints from "../components/Game/TotalPoints";
+import * as DK from "../redux/dataKeys";
+import { GameScreenProps } from "../typings/interface";
+import { setGameObject } from "../utils/formUtil";
+
+interface StyleProps {
+  isMobile?: boolean;
+}
 
 const TopSection = styled.div`
   display: flex;
@@ -11,6 +23,9 @@ const TopSection = styled.div`
 
 const MainSection = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: ${({ isMobile }: StyleProps) => (isMobile ? "100%" : "50%")};
 `;
 
 const BottomSection = styled.div`
@@ -19,21 +34,45 @@ const BottomSection = styled.div`
   width: 100%;
 `;
 
-export default function GameScreen() {
+// functions
+
+function getQuestion(questions: object[]) {
+  const i = Math.floor(Math.random() * questions.length);
+  return questions[i];
+}
+
+/** final component  **/
+
+function GameScreen({ dispatch, isMobile, questions }: GameScreenProps) {
+  const current_question = getQuestion(questions);
+
+  useEffect(() => {
+    setGameObject(dispatch, `${[DK.CURRENT_QUESTION]}`, current_question);
+  }, [dispatch, current_question]);
+
   return (
     <Container>
       <TopSection>
         <TotalPoints />
         <Possessions />
       </TopSection>
-      <MainSection>
-        <h1>center</h1>
+      <MainSection isMobile={isMobile}>
+        <Question />
+        <Answers />
       </MainSection>
       <BottomSection>
-        <h1>triangle</h1>
-        <h1>wands</h1>
-        <h1>home</h1>
+        <h1>X</h1>
+        <Spells />
+        <h1>X</h1>
       </BottomSection>
     </Container>
   );
 }
+
+export default connect(
+  (state: any) => ({
+    isMobile: state.ui.isMobile,
+    questions: state.data.questions,
+  }),
+  (dispatch) => ({ dispatch })
+)(GameScreen);
