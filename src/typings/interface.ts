@@ -61,6 +61,11 @@ export interface MenusContainerProps {
 
 // props - components - game
 
+export interface AnswersProps {
+  isMobile: boolean;
+  current_question: object;
+}
+
 export interface GameScreenProps {
   dispatch: any;
   isMobile: boolean;
@@ -73,6 +78,7 @@ export interface PossessionsProps {
 }
 
 export interface QuestionProps {
+  isMobile: boolean;
   current_question: object;
 }
 
