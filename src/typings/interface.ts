@@ -82,6 +82,11 @@ export interface QuestionProps {
   current_question: object;
 }
 
+export interface SpellsProps {
+  isMobile: boolean;
+  selected_character: object;
+}
+
 export interface TotalPointsProps {
   isMobile: boolean;
   [DK.TOTAL_POINTS]: number;
