@@ -1,0 +1,550 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "category": "the_dark_arts",
+      "question": "Who laces Professor Slughorn's mead with poison in the hopes of it reaching Dumbledore?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Severus Snape",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Bellatrix Lestrange",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Draco Malfoy",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "answer": "Lucius Malfoy",
+          "correct": false
+        }
+      ],
+      "character_theme": ["draco"],
+      "house_theme": ["slytherin"]
+    },
+    {
+      "id": 2,
+      "category": "hogwarts",
+      "question": "What medicine does Madam Pomfrey give to Harry to re-grow the bones in his arm?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Bone-Become",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Skele-Gro",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "answer": "Skele-Spring",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Osteo-Gro",
+          "correct": false
+        }
+      ],
+      "character_theme": ["harry"],
+      "house_theme": ["gryffindor"]
+    },
+    {
+      "id": 3,
+      "category": "magic_spells_and_potions",
+      "question": "What problem is Ron, as Reginald Cattermole, supposed to fix for the Head of the Department of Magical Law Enforcement?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "It is raining in his office",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "answer": "The kettle in his office is biting users",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "The toilet in his office is regurgitating",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "The keys to his office keep shrinking",
+          "correct": false
+        }
+      ],
+      "character_theme": ["ron"],
+      "house_theme": ["gryffindor"]
+    },
+    {
+      "id": 4,
+      "category": "magical_objects",
+      "question": "What is the object that the Triwizard champions must find within a large maze in order to complete the third task of the Triwizard Tournament?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Sorcerer's Stone",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Golden Snitch",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Dragon Egg",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "The Triwizard Cup",
+          "correct": true
+        }
+      ],
+      "character_theme": ["harry", "ron", "hermione", "cho", "cedric"],
+      "house_theme": ["gryffindor", "ravenclaw", "hufflepuff"]
+    },
+    {
+      "id": 5,
+      "category": "magical_people",
+      "question": "When transporting Harry to a safe house, who does Mundungus Fletcher pair up with?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Mad-Eye Moody",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "answer": "Nymphadora Tonks",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Kingsley Shacklebolt",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Remus Lupin",
+          "correct": false
+        }
+      ],
+      "character_theme": ["harry"],
+      "house_theme": ["gryffindor"]
+    },
+    {
+      "id": 6,
+      "category": "animals_and_magical_creatures",
+      "question": "What Petrified animal do Harry, Ron and Hermione find hanging by her tail in a corridor?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Crookshanks",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Mrs. Norris",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "answer": "Scabbers",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Fawkes",
+          "correct": false
+        }
+      ],
+      "character_theme": ["harry", "ron", "hermione"],
+      "house_theme": ["gryffindor"]
+    }
+  ],
+  "characters": [
+    {
+      "id": 1,
+      "full_name": "harry potter",
+      "first_name": "harry",
+      "last_name": "potter",
+      "house": "gryffindor",
+      "img": "avatar.png",
+      "wand": {
+        "id": 1,
+        "description": "11\" holly wood, phoenix feather",
+        "img": "wand.png",
+        "owner": "harry",
+        "house": "gryffindor"
+        
+      },
+      "possessions": [
+        {
+          "id": 1,
+          "name": "hedwig",
+          "img": "hedwig.png",
+          "order": 1,
+          "owner": "harry",
+          "house": "gryffindor"
+        },
+        {
+          "id": 2,
+          "name": "firebolt",
+          "img": "firebolt.png",
+          "order": 2,
+          "owner": "harry",
+          "house": "gryffindor"
+        },
+        {
+          "id": 3,
+          "name": "cloak of invisibility",
+          "img": "cloak.png",
+          "order": 3,
+          "owner": "harry",
+          "house": "gryffindor"
+        },
+        {
+          "id": 4,
+          "name": "marauder's map",
+          "img": "map.png",
+          "order": 4,
+          "owner": "harry",
+          "house": "gryffindor"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "full_name": "hermione granger",
+      "first_name": "hermione",
+      "last_name": "granger",
+      "house": "gryffindor",
+      "img": "avatar.png",
+      "wand": {
+        "id": 2,
+        "description": "10 3/4\" vine wood, dragon heartstring",
+        "img": "wand.png",
+        "owner": "hermione",
+        "house": "gryffindor"
+        
+      },
+      "possessions": [
+        {
+          "id": 5,
+          "name": "time turner",
+          "img": "time_turner.png",
+          "order": 1,
+          "owner": "hermione",
+          "house": "gryffindor"
+        },
+        {
+          "id": 6,
+          "name": "charmed handbag",
+          "img": "handbag.png",
+          "order": 2,
+          "owner": "hermione",
+          "house": "gryffindor"
+        },
+        {
+          "id": 7,
+          "name": "revealer",
+          "img": "revealer.png",
+          "order": 3,
+          "owner": "hermione",
+          "house": "gryffindor"
+        },
+        {
+          "id": 8,
+          "name": "crookshanks",
+          "img": "crookshanks.png",
+          "order": 4,
+          "owner": "hermione",
+          "house": "gryffindor"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "full_name": "ron weasley",
+      "first_name": "ron",
+      "last_name": "weasley",
+      "house": "gryffindor",
+      "img": "avatar.png",
+      "wand": {
+        "id": 3,
+        "description": "14\" willow wood, unicorn tail hair",
+        "img": "wand.png",
+        "owner": "ron",
+        "house": "gryffindor"
+        
+      },
+      "possessions": [
+        {
+          "id": 9,
+          "name": "deluminator",
+          "img": "deluminator.png",
+          "order": 1,
+          "owner": "ron",
+          "house": "gryffindor"
+        },
+        {
+          "id": 10,
+          "name": "cleansweep eleven",
+          "img": "cleansweep_eleven.png",
+          "order": 2,
+          "owner": "ron",
+          "house": "gryffindor"
+        },
+        {
+          "id": 11,
+          "name": "chocolate frog cards",
+          "img": "chocolate_frog_cards.png",
+          "order": 3,
+          "owner": "ron",
+          "house": "gryffindor"
+        },
+        {
+          "id": 12,
+          "name": "scabbers",
+          "img": "scabbers.png",
+          "order": 4,
+          "owner": "ron",
+          "house": "gryffindor"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "full_name": "neville longbottom",
+      "first_name": "neville",
+      "last_name": "longbottom",
+      "house": "gryffindor",
+      "img": "avatar.png",
+      "wand": {
+        "id": 4,
+        "description": "13\" cherry wood, unicorn tail hair",
+        "img": "wand.png",
+        "owner": "neville",
+        "house": "gryffindor"
+        
+      },
+      "possessions": [
+        {
+          "id": 13,
+          "name": "rememberall",
+          "img": "rememberall.png",
+          "order": 1,
+          "owner": "neville",
+          "house": "gryffindor"
+        },
+        {
+          "id": 14,
+          "name": "mimbulus mimbletonia",
+          "img": "mimbulus_mimbletonia.png",
+          "order": 2,
+          "owner": "neville",
+          "house": "gryffindor"
+        },
+        {
+          "id": 15,
+          "name": "trevor",
+          "img": "trevor.png",
+          "order": 3,
+          "owner": "neville",
+          "house": "gryffindor"
+        },
+        {
+          "id": 16,
+          "name": "pointed purple crystal",
+          "img": "pointed_purple_crystal.png",
+          "order": 4,
+          "owner": "neville",
+          "house": "gryffindor"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "full_name": "cedric diggory",
+      "first_name": "cedric",
+      "last_name": "diggory",
+      "house": "hufflepuff",
+      "img": "avatar.png",
+      "wand": {
+        "id": 5,
+        "description": "12 1/4\" ash wood, unicorn tail hair",
+        "img": "wand.png",
+        "owner": "cedric",
+        "house": "hufflepuff"
+        
+      },
+      "possessions": [
+        {
+          "id": 17,
+          "name": "prefect badge",
+          "img": "prefect_badge.png",
+          "order": 1,
+          "owner": "cedric",
+          "house": "hufflepuff"
+        },
+        {
+          "id": 18,
+          "name": "broomstick",
+          "img": "broomstick.png",
+          "order": 2,
+          "owner": "cedric",
+          "house": "hufflepuff"
+        },
+        {
+          "id": 19,
+          "name": "dress robes",
+          "img": "dress_robes.png",
+          "order": 3,
+          "owner": "cedric",
+          "house": "hufflepuff"
+        },
+        {
+          "id": 20,
+          "name": "a guide to advanced transfiguration",
+          "img": "book.png",
+          "order": 4,
+          "owner": "cedric",
+          "house": "hufflepuff"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "full_name": "luna lovegood",
+      "first_name": "luna",
+      "last_name": "lovegood",
+      "house": "ravenclaw",
+      "img": "avatar.png",
+      "wand": {
+        "id": 6,
+        "description": "unknown",
+        "img": "wand.png",
+        "owner": "luna",
+        "house": "ravenclaw"
+        
+      },
+      "possessions": [
+        {
+          "id": 21,
+          "name": "spectrespecs",
+          "img": "spectrespecs.png",
+          "order": 1,
+          "owner": "luna",
+          "house": "ravenclaw"
+        },
+        {
+          "id": 22,
+          "name": "patterned converse sneakers",
+          "img": "converse.png",
+          "order": 2,
+          "owner": "luna",
+          "house": "ravenclaw"
+        },
+        {
+          "id": 23,
+          "name": "butterbeer cork necklace",
+          "img": "necklace.png",
+          "order": 3,
+          "owner": "luna",
+          "house": "ravenclaw"
+        },
+        {
+          "id": 24,
+          "name": "dirigible plum-shaped earrings",
+          "img": "earrings.png",
+          "order": 4,
+          "owner": "luna",
+          "house": "ravenclaw"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "full_name": "draco malfoy",
+      "first_name": "draco",
+      "last_name": "malfoy",
+      "house": "slytherin",
+      "img": "avatar.png",
+      "wand": {
+        "id": 7,
+        "description": "10\" hawthorn wood, unicorn tail hair",
+        "img": "wand.png",
+        "owner": "draco",
+        "house": "slytherin"
+        
+      },
+      "possessions": [
+        {
+          "id": 25,
+          "name": "hand of glory",
+          "img": "hand_of_glory.png",
+          "order": 1,
+          "owner": "draco",
+          "house": "slytherin"
+        },
+        {
+          "id": 26,
+          "name": "peruvian instant darkness powder",
+          "img": "powder.png",
+          "order": 2,
+          "owner": "draco",
+          "house": "slytherin"
+        },
+        {
+          "id": 27,
+          "name": "nimbus 2001",
+          "img": "nimbus_2001.png",
+          "order": 3,
+          "owner": "draco",
+          "house": "slytherin"
+        },
+        {
+          "id": 28,
+          "name": "eagle owl",
+          "img": "eagle_owl.png",
+          "order": 4,
+          "owner": "draco",
+          "house": "slytherin"
+        }
+      ]
+    }
+  ],
+  "spells": [
+    {
+      "id": 1,
+      "name": "diffindo",
+      "type": "50/50",
+      "description": "severs an object into two pieces"
+    },
+    {
+      "id": 2,
+      "name": "legilimens",
+      "type": "phone",
+      "description": "allows the user to gain access to a person's mind and memories"
+    },
+    {
+      "id": 3,
+      "name": "revelio",
+      "type": "clue",
+      "description": "used to reveal concealed objects, messages, invisible things, and passages"
+    }
+  ]
+}
