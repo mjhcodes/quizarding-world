@@ -72,6 +72,11 @@ export interface GameScreenProps {
   questions: object[];
 }
 
+export interface HomeProps {
+  dispatch: any;
+  isMobile: boolean;
+}
+
 export interface PossessionsProps {
   isMobile: boolean;
   selected_character: object;

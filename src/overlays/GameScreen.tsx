@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import Answers from "../components/Game/Answers";
 import Container from "../components/Game/Container";
+import Home from "../components/Game/Home";
 import Possessions from "../components/Game/Possessions";
 import Question from "../components/Game/Question";
 import Spells from "../components/Game/Spells";
@@ -30,6 +31,7 @@ const MainSection = styled.div`
 
 const BottomSection = styled.div`
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
 `;
@@ -61,9 +63,9 @@ function GameScreen({ dispatch, isMobile, questions }: GameScreenProps) {
         <Answers />
       </MainSection>
       <BottomSection>
-        <h1>X</h1>
+        <h1 style={{ width: isMobile ? "60px" : "150px" }}>X</h1>
         <Spells />
-        <h1>X</h1>
+        <Home />
       </BottomSection>
     </Container>
   );
