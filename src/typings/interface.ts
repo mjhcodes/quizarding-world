@@ -99,6 +99,7 @@ export interface TotalPointsProps {
 
 export interface ValueChartProps {
   selected_character: object;
+  current_round: number;
 }
 
 // props - components - menus

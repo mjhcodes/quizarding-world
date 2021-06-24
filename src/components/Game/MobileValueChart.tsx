@@ -6,6 +6,7 @@ import * as DK from "../../redux/dataKeys";
 import { mapHouseToColor } from "../../style/colorMaps";
 import QWStyle from "../../style/QWStyle";
 import { ValueChartProps } from "../../typings/interface";
+import { roundToValueMap } from "../../utils/util";
 
 interface StyleProps {
   house?: string;
@@ -13,6 +14,8 @@ interface StyleProps {
 
 const Triangle = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
   margin-bottom: -2%;
   width: 0;
   height: 0;
@@ -43,7 +46,6 @@ const Value = styled.p`
   z-index: 1;
   position: absolute;
   top: 32px;
-  left: -10px;
   font-size: 1.25rem;
   color: ${({ house }: StyleProps) =>
     _.isEqual(house, DK.HUFFLEPUFF)
@@ -51,12 +53,15 @@ const Value = styled.p`
       : QWStyle.colors.Yellow()};
 `;
 
-function MobileValueChart({ selected_character }: ValueChartProps) {
+function MobileValueChart({
+  selected_character,
+  current_round,
+}: ValueChartProps) {
   const house = _.get(selected_character, "house", "");
 
   return (
     <Triangle house={house}>
-      <Value house={house}>75</Value>
+      <Value house={house}>{roundToValueMap[current_round]}</Value>
     </Triangle>
   );
 }
@@ -64,6 +69,7 @@ function MobileValueChart({ selected_character }: ValueChartProps) {
 export default connect(
   (state: any) => ({
     selected_character: state.form.character.selected_character,
+    current_round: state.form.game.current_round,
   }),
   (dispatch) => ({ dispatch })
 )(MobileValueChart);
