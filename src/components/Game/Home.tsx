@@ -10,6 +10,8 @@ interface StyleProps {
 }
 
 const HomeWrapper = styled.button`
+  width: ${({ isMobile }: StyleProps) => (isMobile ? "66px" : "auto")};
+  text-align: right;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -36,7 +38,10 @@ function returnToHomeScreen(dispatch: any) {
 
 function Home({ dispatch, isMobile }: HomeProps) {
   return (
-    <HomeWrapper onClick={() => returnToHomeScreen(dispatch)}>
+    <HomeWrapper
+      isMobile={isMobile}
+      onClick={() => returnToHomeScreen(dispatch)}
+    >
       <HomeImg
         isMobile={isMobile}
         src="/images/misc/home.png"

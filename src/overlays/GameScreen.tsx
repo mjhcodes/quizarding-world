@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Answers from "../components/Game/Answers";
 import Container from "../components/Game/Container";
 import Home from "../components/Game/Home";
+import MobileValueChart from "../components/Game/MobileValueChart";
 import Possessions from "../components/Game/Possessions";
 import Question from "../components/Game/Question";
 import Spells from "../components/Game/Spells";
@@ -63,7 +64,11 @@ function GameScreen({ dispatch, isMobile, questions }: GameScreenProps) {
         <Answers />
       </MainSection>
       <BottomSection>
-        <h1 style={{ width: isMobile ? "60px" : "150px" }}>X</h1>
+        {isMobile ? (
+          <MobileValueChart />
+        ) : (
+          <h1 style={{ width: "150px" }}>X</h1>
+        )}
         <Spells />
         <Home />
       </BottomSection>

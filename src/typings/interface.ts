@@ -97,6 +97,10 @@ export interface TotalPointsProps {
   [DK.TOTAL_POINTS]: number;
 }
 
+export interface ValueChartProps {
+  selected_character: object;
+}
+
 // props - components - menus
 
 export interface CharacterButtonProps {
