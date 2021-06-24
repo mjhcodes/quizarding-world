@@ -6,7 +6,7 @@ import * as DK from "../../redux/dataKeys";
 import { mapHouseToColor } from "../../style/colorMaps";
 import QWStyle from "../../style/QWStyle";
 import { ValueChartProps } from "../../typings/interface";
-import { roundToValueMap } from "../../utils/util";
+import { getShortValue, roundToValueMap } from "../../utils/util";
 
 interface StyleProps {
   house?: string;
@@ -61,7 +61,9 @@ function MobileValueChart({
 
   return (
     <Triangle house={house}>
-      <Value house={house}>{roundToValueMap[current_round]}</Value>
+      <Value house={house}>
+        {getShortValue(roundToValueMap[current_round])}
+      </Value>
     </Triangle>
   );
 }

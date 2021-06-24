@@ -8,6 +8,19 @@ export function getRandomExpression() {
   return expressions[i];
 }
 
+export function getShortValue(num: number) {
+  if (num > 999999) {
+    return num.toString()[0] + "m";
+  } else if (num > 99999) {
+    return num.toString().slice(0, 3) + "k";
+  } else if (num > 9999) {
+    return num.toString().slice(0, 2) + "k";
+  } else if (num > 999) {
+    return num.toString()[0] + "k";
+  }
+  return num;
+}
+
 export const roundToValueMap = {
   1: 1,
   2: 2,
