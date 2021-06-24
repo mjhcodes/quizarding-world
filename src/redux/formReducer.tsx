@@ -26,6 +26,8 @@ export default function formReducer(
   action: { type: string; name: string; value: boolean | number | object }
 ) {
   switch (action.type) {
+    case DK.RESET_GAME:
+      return { ...initialState };
     case DK.SET_CHARACTER_OBJECT:
     case DK.TOGGLE_CHARACTER_VALUE:
       return {

@@ -24,6 +24,12 @@ export function toggleCharacterValue(
 
 // game
 
+export function resetGame(dispatch: any) {
+  dispatch({
+    type: DK.RESET_GAME,
+  });
+}
+
 export function setGameObject(dispatch: any, name: string, value: object) {
   dispatch({
     type: DK.SET_GAME_OBJECT,

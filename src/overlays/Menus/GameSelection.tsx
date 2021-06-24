@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import MenuButton from "../../components/Menus/MenuButton";
 import Container from "../../components/Menus/Container";
 import * as DK from "../../redux/dataKeys";
+import { resetGame } from "../../utils/formUtil";
 import { toggleOverlay } from "../../utils/uiUtil";
 
 function selectFreePlay(dispatch: any) {
@@ -11,6 +12,8 @@ function selectFreePlay(dispatch: any) {
 }
 
 function GameSelection({ dispatch }: { dispatch: any }) {
+  useEffect(() => resetGame(dispatch), [dispatch]);
+
   return (
     <Container>
       <MenuButton
