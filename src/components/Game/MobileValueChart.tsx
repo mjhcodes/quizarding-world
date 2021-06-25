@@ -5,7 +5,7 @@ import styled from "styled-components";
 import * as DK from "../../redux/dataKeys";
 import { mapHouseToColor } from "../../style/colorMaps";
 import QWStyle from "../../style/QWStyle";
-import { ValueChartProps } from "../../typings/interface";
+import { MobileValueChartProps } from "../../typings/interface";
 import { getShortValue, roundToValueMap } from "../../utils/util";
 
 interface StyleProps {
@@ -56,7 +56,7 @@ const Value = styled.p`
 function MobileValueChart({
   selected_character,
   current_round,
-}: ValueChartProps) {
+}: MobileValueChartProps) {
   const house = _.get(selected_character, "house", "");
 
   return (

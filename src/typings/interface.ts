@@ -24,6 +24,8 @@ export interface FormCharacter {
 export interface FormGame {
   [DK.TOTAL_POINTS]: number;
   [DK.CURRENT_ROUND]: number;
+  [DK.NEXT_ROUND]: number;
+  [DK.TOTAL_ROUNDS]: number;
   [DK.CURRENT_QUESTION]: object;
   [DK.USED_QUESTIONS]: object[];
   [DK.AVAILABLE_SPELLS]: object[];
@@ -97,9 +99,16 @@ export interface TotalPointsProps {
   [DK.TOTAL_POINTS]: number;
 }
 
+export interface MobileValueChartProps {
+  selected_character: object;
+  current_round: number;
+}
+
 export interface ValueChartProps {
   selected_character: object;
   current_round: number;
+  next_round: number;
+  total_rounds: number;
 }
 
 // props - components - menus

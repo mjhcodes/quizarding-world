@@ -15,6 +15,8 @@ const initialState: InitialState = {
   [DK.GAME]: {
     [DK.TOTAL_POINTS]: 0,
     [DK.CURRENT_ROUND]: 1,
+    [DK.NEXT_ROUND]: 2,
+    [DK.TOTAL_ROUNDS]: 21,
     [DK.CURRENT_QUESTION]: {},
     [DK.USED_QUESTIONS]: [],
     [DK.AVAILABLE_SPELLS]: [],
