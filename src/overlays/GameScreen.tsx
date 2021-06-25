@@ -9,6 +9,7 @@ import Possessions from "../components/Game/Possessions";
 import Question from "../components/Game/Question";
 import Spells from "../components/Game/Spells";
 import TotalPoints from "../components/Game/TotalPoints";
+import ValueChart from "../components/Game/ValueChart";
 import * as DK from "../redux/dataKeys";
 import { GameScreenProps } from "../typings/interface";
 import { setGameObject } from "../utils/formUtil";
@@ -48,10 +49,11 @@ function getQuestion(questions: object[]) {
 
 function GameScreen({ dispatch, isMobile, questions }: GameScreenProps) {
   const current_question = getQuestion(questions);
-
   useEffect(() => {
     setGameObject(dispatch, `${[DK.CURRENT_QUESTION]}`, current_question);
   }, [dispatch, current_question]);
+
+  const valueChart = isMobile ? <MobileValueChart /> : <ValueChart />;
 
   return (
     <Container>
@@ -64,11 +66,7 @@ function GameScreen({ dispatch, isMobile, questions }: GameScreenProps) {
         <Answers />
       </MainSection>
       <BottomSection>
-        {isMobile ? (
-          <MobileValueChart />
-        ) : (
-          <h1 style={{ width: "150px" }}>X</h1>
-        )}
+        {valueChart}
         <Spells />
         <Home />
       </BottomSection>
