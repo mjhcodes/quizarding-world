@@ -72,6 +72,7 @@ export interface GameScreenProps {
   dispatch: any;
   isMobile: boolean;
   questions: object[];
+  current_question: object;
 }
 
 export interface HomeProps {

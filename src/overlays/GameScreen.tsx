@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
@@ -47,11 +48,18 @@ function getQuestion(questions: object[]) {
 
 /** final component  **/
 
-function GameScreen({ dispatch, isMobile, questions }: GameScreenProps) {
-  const current_question = getQuestion(questions);
+function GameScreen({
+  dispatch,
+  isMobile,
+  questions,
+  current_question,
+}: GameScreenProps) {
   useEffect(() => {
-    setGameObject(dispatch, `${[DK.CURRENT_QUESTION]}`, current_question);
-  }, [dispatch, current_question]);
+    if (_.isEmpty(current_question)) {
+      const question = getQuestion(questions);
+      setGameObject(dispatch, `${[DK.CURRENT_QUESTION]}`, question);
+    }
+  });
 
   const valueChart = isMobile ? <MobileValueChart /> : <ValueChart />;
 
@@ -78,6 +86,7 @@ export default connect(
   (state: any) => ({
     isMobile: state.ui.isMobile,
     questions: state.data.questions,
+    current_question: state.form.game.current_question,
   }),
   (dispatch) => ({ dispatch })
 )(GameScreen);
