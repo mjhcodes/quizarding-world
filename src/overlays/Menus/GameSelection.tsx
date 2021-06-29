@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import MenuButton from "../../components/Menus/MenuButton";
 import Container from "../../components/Menus/Container";
 import * as DK from "../../redux/dataKeys";
-import { resetGame } from "../../utils/formUtil";
-import { toggleOverlay } from "../../utils/uiUtil";
+import { resetGame } from "../../redux/formActions";
+import { toggleOverlay } from "../../redux/uiActions";
 
 function selectFreePlay(dispatch: any) {
   toggleOverlay(dispatch, `${[DK.GAME_SELECTION]}`, false);

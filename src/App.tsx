@@ -7,7 +7,7 @@ import { fetchData } from "./services/fetchData";
 import QWStyle from "./style/QWStyle";
 import { AppProps } from "./typings/interface";
 import { setRemainingQuestions } from "./redux/formActions";
-import { toggleValue } from "./utils/uiUtil";
+import { toggleValue } from "./redux/uiActions";
 import db from "./db.json";
 
 function getRemainingQuestions(

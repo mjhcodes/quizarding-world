@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setFullData } from "../utils/dataUtil";
+import { setFullData } from "../redux/dataActions";
 
 export async function fetchData(dispatch: any) {
   await axios

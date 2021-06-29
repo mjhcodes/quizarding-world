@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import * as DK from "../../redux/dataKeys";
 import { HomeProps } from "../../typings/interface";
-import { toggleOverlay } from "../../utils/uiUtil";
+import { toggleOverlay } from "../../redux/uiActions";
 
 interface StyleProps {
   isMobile?: boolean;

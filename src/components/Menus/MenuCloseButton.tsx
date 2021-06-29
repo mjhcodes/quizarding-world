@@ -4,7 +4,7 @@ import styled from "styled-components";
 import * as DK from "../../redux/dataKeys";
 import QWStyle from "../../style/QWStyle";
 import { MenuCloseButtonProps } from "../../typings/interface";
-import { toggleOverlay } from "../../utils/uiUtil";
+import { toggleOverlay } from "../../redux/uiActions";
 
 const CloseButton = styled.button`
   position: absolute;

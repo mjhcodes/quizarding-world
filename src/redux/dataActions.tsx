@@ -1,4 +1,4 @@
-import * as DK from "../redux/dataKeys";
+import * as DK from "./dataKeys";
 
 export function resetData(dispatch: any) {
   dispatch({

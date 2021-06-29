@@ -4,8 +4,11 @@ import styled from "styled-components";
 import * as DK from "../../redux/dataKeys";
 import QWStyle from "../../style/QWStyle";
 import { CharacterButtonProps, CharacterObject } from "../../typings/interface";
-import { setCharacterObject, toggleCharacterValue } from "../../utils/formUtil";
-import { toggleOverlay } from "../../utils/uiUtil";
+import {
+  setCharacterObject,
+  toggleCharacterValue,
+} from "../../redux/formActions";
+import { toggleOverlay } from "../../redux/uiActions";
 
 // styled components
 
