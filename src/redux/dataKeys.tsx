@@ -11,7 +11,7 @@ export const CURRENT_ROUND = "current_round";
 export const NEXT_ROUND = "next_round";
 export const TOTAL_ROUNDS = "total_rounds";
 export const CURRENT_QUESTION = "current_question";
-export const USED_QUESTIONS = "used_questions";
+export const REMAINING_QUESTIONS = "remaining_questions";
 export const AVAILABLE_SPELLS = "available_spells";
 
 // form reducers
@@ -19,6 +19,9 @@ export const RESET_GAME = "RESET_GAME";
 export const SET_CHARACTER_OBJECT = "SET_CHARACTER_OBJECT";
 export const TOGGLE_CHARACTER_VALUE = "TOGGLE_CHARACTER_VALUE";
 export const SET_GAME_OBJECT = "SET_GAME_OBJECT";
+export const SET_REMAINING_QUESTIONS = "SET_REMAINING_QUESTIONS";
+export const UPDATE_POINTS = "UPDATE_POINTS";
+export const UPDATE_ROUNDS = "UPDATE_ROUNDS";
 
 // data state
 
