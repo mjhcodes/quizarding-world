@@ -173,6 +173,528 @@
       ],
       "character_theme": ["harry", "ron", "hermione"],
       "house_theme": ["gryffindor"]
+    },
+    {
+      "id": 7,
+      "category": "the_dark_arts",
+      "question": "Who signs a note left inside the fake locket Horcrux?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "TBD 1",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "TBD 2",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "TBD 3",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "R.A.B. (Regulus Arcturus Black, Sirius' brother)",
+          "correct": true
+        }
+      ],
+      "character_theme": [],
+      "house_theme": []
+    },
+    {
+      "id": 8,
+      "category": "hogwarts",
+      "question": "What does Madam Hooch teach at Hogwarts?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Herbology",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Flying Lessons",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "answer": "Divination",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Alchemy",
+          "correct": false
+        }
+      ],
+      "character_theme": [],
+      "house_theme": []
+    },
+    {
+      "id": 9,
+      "category": "magic_spells_and_potions",
+      "question": "Why does Hermione use the spell Protego Totalum around the trio's campsite after they escape the Ministry of Magic?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "It is a protective enchantment",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "answer": "TBD 1",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "TBD 2",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "TBD 3",
+          "correct": false
+        }
+      ],
+      "character_theme": ["hermione", "harry", "ron"],
+      "house_theme": ["gryffindor"]
+    },
+    {
+      "id": 10,
+      "category": "magical_objects",
+      "question": "How many turns does Dumbledore suggest Hermione give the Time-Turner to go back and save Sirius?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Two",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Three",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "answer": "Seven",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Five",
+          "correct": false
+        }
+      ],
+      "character_theme": ["dumbledore", "hermione", "sirius"],
+      "house_theme": ["gryffindor"]
+    },
+    {
+      "id": 11,
+      "category": "magical_people",
+      "question": "According to Aunt Muriel, what serious crime did Professor Dumbledore's father commit?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "He killed three Muggles",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "answer": "TBD 1",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "TBD 2",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "TBD 3",
+          "correct": false
+        }
+      ],
+      "character_theme": ["dumbledore"],
+      "house_theme": ["gryffindor"]
+    },
+    {
+      "id": 12,
+      "category": "animals_and_magical_creatures",
+      "question": "What is the name of Hagrid's half-brother?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "TBD 1",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "TBD 2",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Grawp",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "answer": "TBD 3",
+          "correct": false
+        }
+      ],
+      "character_theme": ["hagrid"],
+      "house_theme": []
+    },
+    {
+      "id": 13,
+      "category": "the_dark_arts",
+      "question": "What is Tom Riddle's middle name?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "TBD 1",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "TBD 2",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Marvolo",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "answer": "TBD 3",
+          "correct": false
+        }
+      ],
+      "character_theme": [],
+      "house_theme": ["slytherin"]
+    },
+    {
+      "id": 14,
+      "category": "hogwarts",
+      "question": "Which teacher stands up to Professor Snape before the battle of Hogwarts?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Madam Hooch",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Professor Trelawney",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Mad-Eye Moody",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Professor McGonagall",
+          "correct": true
+        }
+      ],
+      "character_theme": [],
+      "house_theme": ["slytherin", "gryffindor"]
+    },
+    {
+      "id": 15,
+      "category": "magic_spells_and_potions",
+      "question": "Who binds the Unbreakable Vow between Professor Snape and Narcissa Malfoy?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Lucius Malfoy",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Voldemort",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Quirinus Quirrell",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Bellatrix Lestrange",
+          "correct": true
+        }
+      ],
+      "character_theme": [],
+      "house_theme": ["slytherin"]
+    },
+    {
+      "id": 16,
+      "category": "magical_objects",
+      "question": "What object has the power to destroy Horcruxes because it imbibed Basilisk venom in the Chamber of Secrets?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "The Elder Wand",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Torvus' Arrow",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "The Sword of Gryffindor",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "answer": "Alastar Moody's Walking Stick",
+          "correct": false
+        }
+      ],
+      "character_theme": [],
+      "house_theme": []
+    },
+    {
+      "id": 17,
+      "category": "magical_people",
+      "question": "Who is the Minister for Magic after Cornelius Fudge?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Kingsley Shacklebolt",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Rufus Scrimgeour",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "answer": "Pius Thicknesse",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Millicent Bagnold",
+          "correct": false
+        }
+      ],
+      "character_theme": [],
+      "house_theme": []
+    },
+    {
+      "id": 18,
+      "category": "animals_and_magical_creatures",
+      "question": "What type of dragon does Cedric face in the first task of the Triwizard Tournament?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "The Swedish Short-Snout",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "answer": "The Hungarian Horntail",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "The Norwegian Ridgeback",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "The Hebridean Black",
+          "correct": false
+        }
+      ],
+      "character_theme": ["cedric"],
+      "house_theme": ["hufflepuff"]
+    },
+    {
+      "id": 19,
+      "category": "the_dark_arts",
+      "question": "Who confiscates the locket Horcrux from Mundungus Fletcher?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Albus Dumbledore",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Dolores Umbridge",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "answer": "Severus Snape",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Minerva McGonagall",
+          "correct": false
+        }
+      ],
+      "character_theme": [],
+      "house_theme": []
+    },
+    {
+      "id": 20,
+      "category": "hogwarts",
+      "question": "Who is Neville Longbottom's date for the Yule Ball?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Luna Lovegood",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Ginny Weasley",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "answer": "Parvati Patil",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Cho Chang",
+          "correct": false
+        }
+      ],
+      "character_theme": ["neville"],
+      "house_theme": ["gryffindor"]
+    },
+    {
+      "id": 21,
+      "category": "magic_spells_and_potions",
+      "question": "Legilimens is the spell used to do what?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Invade and potentially manipulate someone's mind",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "answer": "Allows the user to make an object levitate",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Force's an opponents legs to dance uncontrollably",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Causes a person to break out in boils",
+          "correct": false
+        }
+      ],
+      "character_theme": [],
+      "house_theme": []
+    },
+    {
+      "id": 22,
+      "category": "magical_objects",
+      "question": "What does Ron use to destroy the Horcrux locket?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Alastar Moody's Walking Stick",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "The Sword of Gryffindor",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "answer": "Torvus' Arrow",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "The Elder Wand",
+          "correct": false
+        }
+      ],
+      "character_theme": [],
+      "house_theme": []
+    },
+    {
+      "id": 23,
+      "category": "magical_people",
+      "question": "Which members of the Order of the Phoenix are at The Burrow when it is burnt down by Death Eaters?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "The Weasleys and Mad-Eye Moody",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Elphias Doge, Emmeline Vance and the Weasleys",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Mundungus Fletcher, the Weasleys and Hestia Jones",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Remus Lupin, Tonks and the Weasleys",
+          "correct": true
+        }
+      ],
+      "character_theme": [],
+      "house_theme": []
+    },
+    {
+      "id": 24,
+      "category": "animals_and_magical_creatures",
+      "question": "Who let the troll into Hogwarts castle during the Hallowe'en feast?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Peeves",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "answer": "Gregory Goyle",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "answer": "Draco Malfoy",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "answer": "Professor Quirrell",
+          "correct": true
+        }
+      ],
+      "character_theme": [],
+      "house_theme": []
     }
   ],
   "characters": [
