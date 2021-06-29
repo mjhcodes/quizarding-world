@@ -1,4 +1,4 @@
-import * as DK from "../redux/dataKeys";
+import * as DK from "./dataKeys";
 
 // character
 
@@ -35,5 +35,24 @@ export function setGameObject(dispatch: any, name: string, value: object) {
     type: DK.SET_GAME_OBJECT,
     name,
     value,
+  });
+}
+
+export function setRemainingQuestions(dispatch: any, value: object[]) {
+  dispatch({
+    type: DK.SET_REMAINING_QUESTIONS,
+    value,
+  });
+}
+
+export function updatePoints(dispatch: any) {
+  dispatch({
+    type: DK.UPDATE_POINTS,
+  });
+}
+
+export function updateRounds(dispatch: any) {
+  dispatch({
+    type: DK.UPDATE_ROUNDS,
   });
 }
