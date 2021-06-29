@@ -27,7 +27,7 @@ export interface FormGame {
   [DK.NEXT_ROUND]: number;
   [DK.TOTAL_ROUNDS]: number;
   [DK.CURRENT_QUESTION]: object;
-  [DK.USED_QUESTIONS]: object[];
+  [DK.REMAINING_QUESTIONS]: object[];
   [DK.AVAILABLE_SPELLS]: object[];
 }
 
@@ -43,10 +43,12 @@ export interface OverlayVisibility {
 
 export interface AppProps {
   dispatch: any;
-  background: string;
-  [DK.GAME_SCREEN]: boolean;
   [DK.IS_CHARACTER_SELECTED]: boolean;
-  selected_character: object;
+  [DK.SELECTED_CHARACTER]: object;
+  [DK.REMAINING_QUESTIONS]: object[];
+  [DK.TOTAL_ROUNDS]: number;
+  [DK.BACKGROUND]: string;
+  [DK.GAME_SCREEN]: boolean;
 }
 
 // props - containers
@@ -64,14 +66,16 @@ export interface MenusContainerProps {
 // props - components - game
 
 export interface AnswersProps {
+  dispatch: any;
   isMobile: boolean;
   current_question: object;
+  remaining_questions: object[];
 }
 
 export interface GameScreenProps {
   dispatch: any;
   isMobile: boolean;
-  questions: object[];
+  [DK.REMAINING_QUESTIONS]: object[];
   current_question: object;
 }
 
