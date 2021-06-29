@@ -32,7 +32,9 @@ const PointsCaption = styled.p`
 function TotalPoints({ isMobile, total_points }: TotalPointsProps) {
   return (
     <PointsWrapper>
-      <PointsSection isMobile={isMobile}>{total_points}</PointsSection>
+      <PointsSection isMobile={isMobile}>
+        {total_points.toLocaleString()}
+      </PointsSection>
       <PointsCaption isMobile={isMobile}>points</PointsCaption>
     </PointsWrapper>
   );
