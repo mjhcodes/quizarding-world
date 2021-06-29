@@ -1,5 +1,6 @@
 import * as DK from "./dataKeys";
 import { FormCharacter, FormGame } from "../typings/interface";
+import { roundToValueMap } from "../utils/util";
 
 interface InitialState {
   [DK.CHARACTER]: FormCharacter;
@@ -18,14 +19,14 @@ const initialState: InitialState = {
     [DK.NEXT_ROUND]: 2,
     [DK.TOTAL_ROUNDS]: 21,
     [DK.CURRENT_QUESTION]: {},
-    [DK.USED_QUESTIONS]: [],
+    [DK.REMAINING_QUESTIONS]: [],
     [DK.AVAILABLE_SPELLS]: [],
   },
 };
 
 export default function formReducer(
   state = initialState,
-  action: { type: string; name: string; value: boolean | number | object }
+  action: { type: string; name: string; value: any }
 ) {
   switch (action.type) {
     case DK.RESET_GAME:
@@ -45,6 +46,31 @@ export default function formReducer(
         game: {
           ...state.game,
           [action.name]: action.value,
+        },
+      };
+    case DK.SET_REMAINING_QUESTIONS:
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          [DK.REMAINING_QUESTIONS]: action.value,
+        },
+      };
+    case DK.UPDATE_POINTS:
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          [DK.TOTAL_POINTS]: roundToValueMap[state.game.current_round],
+        },
+      };
+    case DK.UPDATE_ROUNDS:
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          [DK.CURRENT_ROUND]: state.game.current_round + 1,
+          [DK.NEXT_ROUND]: state.game.next_round + 1,
         },
       };
     default:
