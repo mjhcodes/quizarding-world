@@ -1,10 +1,15 @@
 import _ from "lodash";
-import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import * as DK from "../../redux/dataKeys";
 import { mapColorToAnswer } from "../../style/colorMaps";
 import QWStyle from "../../style/QWStyle";
 import { AnswersProps } from "../../typings/interface";
+import {
+  setGameObject,
+  updatePoints,
+  updateRounds,
+} from "../../redux/formActions";
 
 interface StyleProps {
   isMobile?: boolean;
@@ -45,17 +50,63 @@ const AnswerButton = styled.button`
   }
 `;
 
-function Answers({ isMobile, current_question }: AnswersProps) {
+// functions
+
+function getQuestion(remaining_questions: object[]) {
+  const current_question = remaining_questions.shift();
+  return current_question ? current_question : {};
+}
+
+function setNextQuestion(dispatch: any, remaining_questions: object[]) {
+  const question = getQuestion(remaining_questions);
+  setGameObject(dispatch, `${[DK.CURRENT_QUESTION]}`, question);
+}
+
+function correctAnswer(dispatch: any, remaining_questions: object[]) {
+  updatePoints(dispatch);
+  updateRounds(dispatch);
+  setNextQuestion(dispatch, remaining_questions);
+}
+
+function wrongAnswer() {
+  console.log("WRONG");
+}
+
+function selectAnswer(
+  dispatch: any,
+  correct: boolean,
+  remaining_questions: object[]
+) {
+  if (correct) {
+    correctAnswer(dispatch, remaining_questions);
+  } else {
+    wrongAnswer();
+  }
+}
+
+/** final component  **/
+
+function Answers({
+  dispatch,
+  isMobile,
+  current_question,
+  remaining_questions,
+}: AnswersProps) {
   const answers = _.get(current_question, "answers", []);
   return (
     <AnswersContainer>
-      {_.map(answers, (answer) => {
-        return (
-          <AnswerButton key={answer.id} i={answer.id} isMobile={isMobile}>
-            {answer.answer}
-          </AnswerButton>
-        );
-      })}
+      {_.map(answers, (answer) => (
+        <AnswerButton
+          key={answer.id}
+          i={answer.id}
+          isMobile={isMobile}
+          onClick={() =>
+            selectAnswer(dispatch, answer.correct, remaining_questions)
+          }
+        >
+          {answer.answer}
+        </AnswerButton>
+      ))}
     </AnswersContainer>
   );
 }
@@ -64,6 +115,7 @@ export default connect(
   (state: any) => ({
     isMobile: state.ui.isMobile,
     current_question: state.form.game.current_question,
+    remaining_questions: state.form.game.remaining_questions,
   }),
   (dispatch) => ({ dispatch })
 )(Answers);
