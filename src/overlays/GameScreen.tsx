@@ -13,7 +13,7 @@ import TotalPoints from "../components/Game/TotalPoints";
 import ValueChart from "../components/Game/ValueChart";
 import * as DK from "../redux/dataKeys";
 import { GameScreenProps } from "../typings/interface";
-import { setGameObject } from "../utils/formUtil";
+import { setGameObject } from "../redux/formActions";
 
 interface StyleProps {
   isMobile?: boolean;
@@ -41,9 +41,9 @@ const BottomSection = styled.div`
 
 // functions
 
-function getQuestion(questions: object[]) {
-  const i = Math.floor(Math.random() * questions.length);
-  return questions[i];
+function getQuestion(remaining_questions: object[]) {
+  const current_question = remaining_questions.shift();
+  return current_question ? current_question : {};
 }
 
 /** final component  **/
@@ -51,12 +51,12 @@ function getQuestion(questions: object[]) {
 function GameScreen({
   dispatch,
   isMobile,
-  questions,
+  remaining_questions,
   current_question,
 }: GameScreenProps) {
   useEffect(() => {
     if (_.isEmpty(current_question)) {
-      const question = getQuestion(questions);
+      const question = getQuestion(remaining_questions);
       setGameObject(dispatch, `${[DK.CURRENT_QUESTION]}`, question);
     }
   });
@@ -85,7 +85,7 @@ function GameScreen({
 export default connect(
   (state: any) => ({
     isMobile: state.ui.isMobile,
-    questions: state.data.questions,
+    remaining_questions: state.form.game.remaining_questions,
     current_question: state.form.game.current_question,
   }),
   (dispatch) => ({ dispatch })
